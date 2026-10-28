@@ -2932,3 +2932,43 @@ if (document.readyState === "loading") {
 } else {
   initializeScheduler();
 }
+
+
+/* =========================================
+   DEVELOPER INTRO MODAL — CLOSE BEHAVIOR
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("developerModal");
+  const closeButton = document.getElementById("developerClose");
+
+  if (!modal || !closeButton) return;
+
+  // Close when clicking the X button
+  closeButton.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // Close when clicking the dark overlay outside the popup
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Prevent clicks inside the white popup from closing it
+  const message = modal.querySelector(".developer-message");
+
+  if (message) {
+    message.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  }
+
+  // Close with the Escape key (optional convenience)
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.style.display !== "none") {
+      modal.style.display = "none";
+    }
+  });
+});
