@@ -1738,3 +1738,111 @@ textarea,
 
   letter-spacing: 1px;
 }
+
+
+/* =========================================
+   FIXED DEVELOPER INTRO POPUP
+   White background + dark text
+   ========================================= */
+
+.developer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(3, 7, 22, 0.78);
+}
+
+.developer-message {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 36px;
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb;
+  box-shadow: 8px 8px 0 #ee466f;
+  font-family: Aptos, Calibri, "Segoe UI", Arial, sans-serif;
+}
+
+.developer-message h2 {
+  margin: 0 0 22px;
+  color: #0b122c !important;
+  font-family: Aptos, Calibri, "Segoe UI", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.developer-message p {
+  margin: 0 0 16px;
+  color: #374151 !important;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.developer-message strong {
+  color: #ee466f !important;
+  font-weight: 800;
+}
+
+.developer-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #0b122c;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.developer-close:hover {
+  background: #ee466f;
+  border-color: #ee466f;
+  color: #ffffff;
+}
+
+.developer-footer {
+  margin-top: 24px;
+  padding-top: 14px;
+  border-top: 2px solid #0b122c;
+  color: #0b122c !important;
+  font-family: "Roboto Mono", Consolas, monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 500px) {
+  .developer-modal {
+    padding: 16px;
+  }
+
+  .developer-message {
+    padding: 30px 22px;
+    box-shadow: 5px 5px 0 #ee466f;
+  }
+
+  .developer-message h2 {
+    font-size: 30px;
+  }
+
+  .developer-message p {
+    font-size: 13px;
+  }
+}
+
