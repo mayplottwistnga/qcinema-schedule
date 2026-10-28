@@ -1649,6 +1649,7 @@ textarea,
   align-items: center;
   justify-content: center;
   padding: 20px;
+  font-family: monospace;
   background: rgba(0, 0, 0, 0.65);
 }
 
