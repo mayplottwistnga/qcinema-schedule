@@ -2915,11 +2915,42 @@ function addScreeningToCalendar(screening) {
   }
 }
 
-// Export all screenings.
+
 function exportAllScreeningsToCalendar(screenings) {
-  const events = screenings.map(createICSEvent);
+  const events = screenings.map((screening) => {
+    const movie = getMovie(screening.movieId);
+
+    if (!movie) return "";
+
+    const title = movie.program || movie.title;
+    const date = screening.date;
+    const startTime = screening.start;
+    const runtime = Number(screening.runtime || movie.runtime || 90);
+
+    const [hours, minutes] = startTime.split(":").map(Number);
+
+    const totalMinutes = hours * 60 + minutes + runtime;
+
+    const endHours = Math.floor(totalMinutes / 60) % 24;
+    const endMinutes = totalMinutes % 60;
+
+    const endTime =
+      String(endHours).padStart(2, "0") + ":" +
+      String(endMinutes).padStart(2, "0");
+
+    return createICSEvent({
+      title: title,
+      date: date,
+      startTime: startTime,
+      endTime: endTime,
+      location: screening.cinema,
+      description: "QCinema 2026 Film Screening"
+    });
+  });
+
   downloadICS(events, "qcinema-2026-all-screenings.ics");
 }
+
 
 
 /* =========================================
