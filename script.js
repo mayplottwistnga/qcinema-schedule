@@ -1502,16 +1502,7 @@ if (syncCalendarBtn) {
 }
 
 if (exportAllCalendarBtn) {
-  exportAllCalendarBtn.addEventListener("click", () => {
-    const screenings = getScheduledScreenings();
-
-    if (screenings.length === 0) {
-      alert("No screenings available to export.");
-      return;
-    }
-
-    exportAllScreeningsToCalendar(screenings);
-  });
+  exportAllCalendarBtn.addEventListener("click", saveCalendarAsImage);
 }
 
 /* =========================================
@@ -2978,47 +2969,67 @@ function clearSchedule() {
    EXPORT CALENDAR AS IMAGE
 ========================================= */
 
+
 async function saveCalendarAsImage() {
   if (!scheduledScreenings.length) {
-    alert("Add at least one screening before saving your calendar.");
+    alert("Add at least one screening to your schedule first.");
     return;
   }
 
   if (typeof html2canvas !== "function") {
-    alert(
-      "The image export library could not load. " +
-        "Check your internet connection.",
-    );
+    alert("Unable to load the image export feature. Please try again.");
     return;
   }
 
-  if (!calendar || !saveCalendarBtn) return;
+  if (!calendar || !exportAllCalendarBtn) return;
 
-  saveCalendarBtn.disabled = true;
-  saveCalendarBtn.textContent = "Preparing image…";
+  const button = exportAllCalendarBtn;
+  const originalText = button.textContent;
+
+  button.disabled = true;
+  button.textContent = "Preparing image...";
 
   try {
     const canvas = await html2canvas(calendar, {
       backgroundColor: "#f4f4f0",
       scale: 2,
       useCORS: true,
+      logging: false
     });
 
-    const link = document.createElement("a");
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        alert("Unable to generate the calendar image.");
+        button.disabled = false;
+        button.textContent = originalText;
+        return;
+      }
 
-    link.download = "qcinema-2026-my-schedule.png";
-    link.href = canvas.toDataURL("image/png");
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
 
-    link.click();
+      link.href = url;
+      link.download = "qcinema-2026-my-schedule.png";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 30000);
+
+      button.disabled = false;
+      button.textContent = originalText;
+    }, "image/png");
+
   } catch (error) {
     console.error("Calendar image export failed:", error);
-
     alert("Unable to save the calendar image. Please try again.");
-  } finally {
-    saveCalendarBtn.disabled = false;
-    saveCalendarBtn.textContent = "Save as image";
+
+    button.disabled = false;
+    button.textContent = originalText;
   }
 }
+
 
 /* =========================================
    INITIALIZATION
