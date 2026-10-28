@@ -1479,6 +1479,41 @@ function save() {
   }
 }
 
+const syncCalendarBtn = document.getElementById("syncCalendarBtn");
+const exportAllCalendarBtn = document.getElementById("exportAllCalendarBtn");
+
+// Replace this with your actual scheduled-screenings array.
+function getScheduledScreenings() {
+  return window.scheduledScreenings || [];
+}
+
+if (syncCalendarBtn) {
+  syncCalendarBtn.addEventListener("click", () => {
+    const screenings = getScheduledScreenings();
+
+    if (screenings.length === 0) {
+      alert("Please add screenings to your schedule first.");
+      return;
+    }
+
+    // Export the scheduled events as a calendar file.
+    exportAllScreeningsToCalendar(screenings);
+  });
+}
+
+if (exportAllCalendarBtn) {
+  exportAllCalendarBtn.addEventListener("click", () => {
+    const screenings = getScheduledScreenings();
+
+    if (screenings.length === 0) {
+      alert("No screenings available to export.");
+      return;
+    }
+
+    exportAllScreeningsToCalendar(screenings);
+  });
+}
+
 /* =========================================
    GENERAL HELPERS
 ========================================= */
