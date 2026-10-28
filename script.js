@@ -5,25 +5,6 @@ let currentScreeningsPage = 1;
 const SHORTS_SET_RUNTIME = 95;
 
 
-const qcinemaIntroModal = document.getElementById("qcinemaIntroModal");
-const closeQcinemaIntro = document.getElementById("closeQcinemaIntro");
-const acknowledgeQcinemaIntro = document.getElementById(
-  "acknowledgeQcinemaIntro"
-);
-
-function closeQcinemaDisclaimer() {
-  qcinemaIntroModal.classList.remove("visible");
-}
-
-closeQcinemaIntro.addEventListener("click", closeQcinemaDisclaimer);
-acknowledgeQcinemaIntro.addEventListener("click", closeQcinemaDisclaimer);
-
-// Show the disclaimer when the page loads.
-window.addEventListener("DOMContentLoaded", () => {
-  qcinemaIntroModal.classList.add("visible");
-});
-
-
 const MOVIE_DETAILS = {
   1: {
     poster: "poster/9-temples.jpg",
