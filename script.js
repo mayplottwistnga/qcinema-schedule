@@ -1484,7 +1484,7 @@ const exportAllCalendarBtn = document.getElementById("exportAllCalendarBtn");
 
 // Replace this with your actual scheduled-screenings array.
 function getScheduledScreenings() {
-  return window.scheduledScreenings || [];
+  return scheduledScreenings;
 }
 
 if (syncCalendarBtn) {
