@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <title>QCinema 2026 Scheduler</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="logo" href="#" aria-label="QCinema Scheduler home">
+      QCINEMA 2026<span> / SCHEDULER</span>
+    </a>
+  </header>
+
+  <main class="container">
+    <section class="movies-section">
+      <div class="section-header">
+        <div>
+
+        </div>
+      </div>
+
+      <div id="programLegend" class="program-legend" aria-label="Filter films by program"></div>
+
+      <div class="category-navigation">
+        <div class="category-tabs">
+          <!-- Your existing category buttons go here -->
+        </div>
+
+        <div id="programDropdown" class="program-dropdown"></div>
+      </div>
+
+      <div id="moviesGrid" class="movies-grid"></div>
+    </section>
+
+    <section class="scheduler-section">
+      <div class="section-header">
+        <h2 class="section-title">Add Screening</h2>
+
+      </div>
+      </div>
+
+      <div class="scheduler-layout">
+        <aside class="scheduler-panel">
+          <form id="screeningForm">
+            <div class="form-group">
+              <label class="form-label" for="movieSelect">
+                Film / Shorts Program
+              </label>
+              <select id="movieSelect" class="form-control" required>
+                <option value="">Select film or program</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="scheduleSelect">
+                Available Screening
+              </label>
+              <select id="scheduleSelect" class="form-control" required disabled>
+                <option value="">Select a film first</option>
+              </select>
+            </div>
+
+            <div id="availabilityDisplay" class="availability">
+              Choose a film or program to view its schedule.
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="runtimeInput">
+                Runtime (minutes)
+              </label>
+              <input id="runtimeInput" class="form-control" type="number" min="1" max="600" value="90" disabled />
+              <p class="field-note">
+                Default runtime: 90 minutes. Adjust if needed.
+              </p>
+            </div>
+
+            <div class="end-time">
+              <span>Estimated end time</span>
+              <strong id="endDisplay">—</strong>
+            </div>
+
+            <button id="addScreeningButton" type="submit" class="primary-button" disabled>
+              + Add to itinerary
+            </button>
+          </form>
+        </aside>
+
+        <div class="scheduler-content">
+          <div class="info-strip">
+            <div>
+              <span class="info-number">01</span>
+              <div>
+                <strong>Choose a film</strong>
+                <p>
+                  Full-length titles and shorts programs have separate
+                  entries.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span class="info-number">02</span>
+              <div>
+                <strong>Select a screening</strong>
+                <p>
+                  Cinema, date, and start time come from the film schedule.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span class="info-number">03</span>
+              <div>
+                <strong>Check your schedule</strong>
+                <p>Spot overlapping screenings at the same cinema.</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="screenings-section">
+            <div class="section-header">
+              <div>
+                <h2 class="section-title">My Screenings</h2>
+                <p class="section-subtitle">Your saved festival plans.</p>
+              </div>
+              <button id="clearBtn" class="secondary-button" type="button">
+                Clear all
+              </button>
+            </div>
+
+            <div class="screenings-table">
+              <div class="screenings-header">
+                <div>Film / Program</div>
+                <div>Date</div>
+                <div>Cinema</div>
+                <div>Time</div>
+                <div></div>
+              </div>
+              <div id="screeningsList">
+                <div class="empty-state">No screenings added yet.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar-section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">My QCinema Schedule</h2>
+        </div>
+        <button id="saveCalendarBtn" class="secondary-button" type="button">
+          Save as image
+        </button>
+      </div>
+      <div id="calendar">
+        <div class="calendar-empty">
+          Add screenings to start building your calendar.
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      QCINEMA SCHEDULER · PERSONAL PLANNING TOOL
+    </footer>
+  </main>
+
+  <!-- QCinema 2026 Disclaimer Modal -->
+  <div id="qcinemaIntroModal" class="intro-modal-overlay">
+    <div class="intro-modal">
+      <button type="button" class="intro-modal-close" id="closeQcinemaIntro"
+        aria-label="Close introduction">&times;</button>
+
+      <p>
+        This app is developed by <strong>Jive</strong>
+        (<strong>@mayplottwistba</strong> /
+        <strong>@mayplottwistnga</strong> on X and IG) and is
+        <strong>not affiliated with QCinema</strong>.
+      </p>
+
+      <p>
+        To make sure your schedules are accurate, please check the
+        <strong>official QCinema website</strong> and the websites
+        of your respective cinemas. This app is primarily designed
+        to help you organize your screening schedule for
+        <strong>QCinema 2026</strong>.
+      </p>
+
+      <p>
+        Please note that <strong>cinema seat availability is NOT
+          synced</strong> with this app. Make sure to book your tickets
+        early and purchase them <strong>ONLY through official
+          ticketing websites</strong>.
+      </p>
+
+      <div class="intro-modal-footer">
+        <button type="button" id="acknowledgeQcinemaIntro">
+          GOT IT
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
