@@ -2759,6 +2759,134 @@ function renderCalendar() {
     .join("");
 }
 
+
+/* =========================================
+   QCINEMA 2026 — ADD TO CALENDAR
+   Supports individual events and bulk export
+========================================= */
+
+// Convert a date and time into an ICS-compatible timestamp.
+// Expected date: YYYY-MM-DD
+// Expected time: HH:MM (24-hour format)
+function toICSDateTime(date, time) {
+  const cleanDate = String(date).replace(/-/g, "");
+  const cleanTime = String(time).replace(/:/g, "");
+
+  return `${cleanDate}T${cleanTime}00`;
+}
+
+// Escape text for the ICS file format.
+function escapeICS(value = "") {
+  return String(value)
+    .replace(/\\/g, "\\\\")
+    .replace(/\n/g, "\\n")
+    .replace(/,/g, "\\,")
+    .replace(/;/g, "\\;");
+}
+
+// Create a calendar event.
+function createICSEvent({
+  title,
+  date,
+  startTime,
+  endTime,
+  location = "QCinema 2026",
+  description = "Added using the QCinema 2026 Scheduler."
+}) {
+  if (!title || !date || !startTime || !endTime) {
+    console.warn("Skipping event: missing title, date, or time.", {
+      title, date, startTime, endTime
+    });
+    return "";
+  }
+
+  const now = new Date();
+  const stamp = now.toISOString()
+    .replace(/[-:]/g, "")
+    .replace(/\.\d{3}/, "");
+
+  const start = toICSDateTime(date, startTime);
+  let end = toICSDateTime(date, endTime);
+
+  // If the screening ends after midnight, move the end
+  // time to the following day.
+  if (endTime < startTime) {
+    const nextDay = new Date(`${date}T12:00:00`);
+    nextDay.setDate(nextDay.getDate() + 1);
+
+    const nextDate = [
+      nextDay.getFullYear(),
+      String(nextDay.getMonth() + 1).padStart(2, "0"),
+      String(nextDay.getDate()).padStart(2, "0")
+    ].join("-");
+
+    end = toICSDateTime(nextDate, endTime);
+  }
+
+  return [
+    "BEGIN:VEVENT",
+    `UID:${crypto.randomUUID()}@qcinema-scheduler`,
+    `DTSTAMP:${stamp}`,
+    `DTSTART:${start}`,
+    `DTEND:${end}`,
+    `SUMMARY:${escapeICS(title)}`,
+    `LOCATION:${escapeICS(location)}`,
+    `DESCRIPTION:${escapeICS(description)}`,
+    "END:VEVENT"
+  ].join("\r\n");
+}
+
+// Download one or more events as an .ics calendar file.
+function downloadICS(events, filename = "qcinema-2026-schedule.ics") {
+  const validEvents = events.filter(Boolean);
+
+  if (!validEvents.length) {
+    alert("No valid screenings found to export.");
+    return;
+  }
+
+  const calendarContent = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//QCinema 2026 Scheduler//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    ...validEvents,
+    "END:VCALENDAR"
+  ].join("\r\n");
+
+  const blob = new Blob([calendarContent], {
+    type: "text/calendar;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+// Export a single screening.
+function addScreeningToCalendar(screening) {
+  const event = createICSEvent(screening);
+
+  if (event) {
+    downloadICS([event], "qcinema-screening.ics");
+  }
+}
+
+// Export all screenings.
+function exportAllScreeningsToCalendar(screenings) {
+  const events = screenings.map(createICSEvent);
+  downloadICS(events, "qcinema-2026-all-screenings.ics");
+}
+
+
 /* =========================================
    CLEAR SCHEDULE
 ========================================= */
