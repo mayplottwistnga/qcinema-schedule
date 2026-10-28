@@ -1927,3 +1927,15 @@ textarea,
 }
 
 
+/* Show Sync to Calendar on mobile only */
+#syncCalendarBtn {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  #syncCalendarBtn {
+    display: inline-flex !important;
+  }
+}
+
+
