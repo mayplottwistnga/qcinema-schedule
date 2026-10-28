@@ -209,6 +209,32 @@
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
+  <script>
+  const developerModal = document.getElementById("developerModal");
+  const developerClose = document.getElementById("developerClose");
+
+  // Close using the X button
+  developerClose.addEventListener("click", function () {
+    developerModal.style.display = "none";
+  });
+
+  // Close by clicking outside the white popup
+  developerModal.addEventListener("click", function (event) {
+    if (event.target === developerModal) {
+      developerModal.style.display = "none";
+    }
+  });
+
+  // Close using the Escape key
+  document.addEventListener("keydown", function (event) {
+    if (
+      event.key === "Escape" &&
+      developerModal.style.display !== "none"
+    ) {
+      developerModal.style.display = "none";
+    }
+  });
+</script>
 </body>
 
 </html>
