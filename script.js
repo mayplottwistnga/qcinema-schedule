@@ -4,9 +4,6 @@ const SCREENINGS_PER_PAGE = 4;
 let currentScreeningsPage = 1;
 const SHORTS_SET_RUNTIME = 95;
 
-
-
-
 const MOVIE_DETAILS = {
   1: {
     poster: "poster/9-temples.jpg",
@@ -18,8 +15,7 @@ const MOVIE_DETAILS = {
   },
   3: {
     poster: "poster/ella.jpg",
-    letterboxd:
-      "https://letterboxd.com/film/ella-arcangel-ballad-of-tooth-and-claw/",
+    letterboxd: "https://letterboxd.com/film/ella-arcangel-ballad-of-tooth-and-claw/",
   },
   4: {
     poster: "poster/hearing.jpg",
@@ -49,10 +45,6 @@ const MOVIE_DETAILS = {
     poster: "poster/baby.jpg",
     letterboxd: "https://letterboxd.com/film/baby-jackfruit-baby-guava/",
   },
-  13: {
-    poster: "poster/house.jpg",
-    letterboxd: "https://letterboxd.com/film/house-of-the-wind/",
-  },
   11: {
     poster: "poster/furies.jpg",
     letterboxd: "https://letterboxd.com/film/furies-2026/",
@@ -60,6 +52,10 @@ const MOVIE_DETAILS = {
   12: {
     poster: "poster/gradiva.jpg",
     letterboxd: "https://letterboxd.com/film/la-gradiva/",
+  },
+  13: {
+    poster: "poster/house.jpg",
+    letterboxd: "https://letterboxd.com/film/house-of-the-wind/",
   },
   14: {
     poster: "poster/sad.jpg",
@@ -99,9 +95,9 @@ const MOVIE_DETAILS = {
   },
   23: {
     poster: "poster/teenage.jpg",
-    letterboxd:
-      "https://letterboxd.com/film/teenage-sex-and-death-at-camp-miasma/",
+    letterboxd: "https://letterboxd.com/film/teenage-sex-and-death-at-camp-miasma/",
   },
+
   25: {
     poster: "poster/arrested.jpg",
     letterboxd: "https://letterboxd.com/film/arrested-memory/",
@@ -140,8 +136,7 @@ const MOVIE_DETAILS = {
   },
   34: {
     poster: "poster/inch.jpg",
-    letterboxd:
-      "https://letterboxd.com/film/i-grew-an-inch-when-my-father-died/",
+    letterboxd: "https://letterboxd.com/film/i-grew-an-inch-when-my-father-died/",
   },
   35: {
     poster: "poster/ibuku.jpg",
@@ -193,8 +188,7 @@ const MOVIE_DETAILS = {
   },
   47: {
     poster: "poster/deserve.jpg",
-    letterboxd:
-      "https://letterboxd.com/film/i-deserve-a-lover-whose-every-rise-sets-fiery/",
+    letterboxd: "https://letterboxd.com/film/i-deserve-a-lover-whose-every-rise-sets-fiery/",
   },
   48: {
     poster: "poster/moon.jpg",
@@ -202,8 +196,7 @@ const MOVIE_DETAILS = {
   },
   49: {
     poster: "poster/illusion.jpg",
-    letterboxd:
-      "https://letterboxd.com/film/the-illusion-of-an-everlasting-summer/",
+    letterboxd: "https://letterboxd.com/film/the-illusion-of-an-everlasting-summer/",
   },
   50: {
     poster: "poster/union.jpg",
@@ -215,20 +208,21 @@ const MOVIE_DETAILS = {
   },
   52: {
     poster: "",
-    letterboxd: "https://letterboxd.com/film/body-works/",
+    letterboxd: "",
   },
   53: {
-    poster: "poster/desire.jpg",
-    letterboxd: "https://letterboxd.com/film/is-this-desire/",
+    poster: "",
+    letterboxd: "",
   },
   54: {
-    poster: "poster/said.jpg",
-    letterboxd: "https://letterboxd.com/film/she-said-2026/",
+    poster: "",
+    letterboxd: "",
   },
   55: {
-    poster: "poster/through.jpg",
-    letterboxd: "https://letterboxd.com/film/through-the-cracks-2026/",
+    poster: "",
+    letterboxd: "",
   },
+
   56: {
     poster: "poster/bleat.jpg",
     letterboxd: "https://letterboxd.com/film/bleat-2025/",
@@ -285,6 +279,7 @@ const MOVIE_DETAILS = {
     poster: "poster/monsters.jpg",
     letterboxd: "https://letterboxd.com/film/they-made-monsters/",
   },
+
   70: {
     poster: "poster/winter.jpg",
     letterboxd: "https://letterboxd.com/film/a-long-winter-2026/",
@@ -307,7 +302,7 @@ const MOVIE_DETAILS = {
   },
   75: {
     poster: "poster/beloved.jpg",
-    letterboxd: "https://letterboxd.com/film/nowhere-to-lay-my-eyes/",
+    letterboxd: "https://letterboxd.com/film/the-beloved-2026/",
   },
   76: {
     poster: "poster/diary.jpg",
@@ -319,8 +314,9 @@ const MOVIE_DETAILS = {
   },
   78: {
     poster: "poster/everytime.jpg",
-    letterboxd: "https://letterboxd.com/film/everytime/",
+    letterboxd: "https://letterboxd.com/film/everytime-2026/",
   },
+
   79: {
     poster: "poster/a-is-for-agustin.jpg",
     letterboxd: "https://letterboxd.com/film/a-is-for-agustin/",
@@ -358,12 +354,13 @@ const SHORTS_PROGRAM_COLORS = {
   "Program 4: The Mountains Always Asks For More": "#408D78",
 };
 
-
 const filmRows = [
+  // ASIAN NEXT WAVE
   [
     1, "Asian Next Wave", "9 Temples to Heaven", "Sompot Chidgasornpongse", "", 140,
     [
       ["Gateway", "C11", "2026-11-15", "18:10"],
+      ["Gateway", "C11", "2026-11-16", "12:30"],
       ["Gateway", "C12", "2026-11-18", "12:30"],
       ["SM Fairview", "C2", "2026-11-19", "17:30"],
     ],
@@ -372,715 +369,580 @@ const filmRows = [
   [
     2, "Asian Next Wave", "A Girl Unknown", "Zou Jing", "", 125,
     [
-      ["Gateway", "", "2026-11-17", "15:30"],
-      ["Fisher Mall", "", "2026-11-19", "10:00"],
-      ["Gateway", "", "2026-11-22", "20:00"],
+      ["Gateway", "C11", "2026-11-16", "15:00"],
+      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-18", "15:15"],
+      ["Fisher Mall", "C3", "2026-11-21", "18:00"],
     ],
     "", ""
   ],
   [
     3, "Asian Next Wave", "Ella Archangel: Awit ng Pangil at Kuko", "Mervin Malonzo", "", 90,
     [
-      ["TriNoma", "", "2026-11-19", "20:00"],
-      ["Gateway", "", "2026-11-22", "18:00"],
+      ["Quezon City M.I.C.E Center", "", "2026-11-13", "19:00"],
+      ["Gateway", "C5", "2026-11-14", "15:30"],
+      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-17", "17:30"],
+      ["Gateway", "C17", "2026-11-20", "13:00"],
     ],
     "", ""
   ],
   [
     4, "Asian Next Wave", "Hearing", "Lê Bảo", "", 128,
     [
-      ["TriNoma", "", "2026-11-15", "15:30"],
-      ["TriNoma", "", "2026-11-20", "19:30"],
+      ["Gateway", "C12", "2026-11-14", "17:50"],
+      ["Gateway", "C16", "2026-11-16", "17:20"],
+      ["Fisher Mall", "C3", "2026-11-21", "20:45"],
     ],
     "", ""
   ],
   [
     5, "Asian Next Wave", "Fujiko", "Taichi Kimura", "", 95,
     [
-      ["Gateway", "", "2026-11-13", "21:00"],
-      ["Galleria", "", "2026-11-15", "16:00"],
-      ["Fisher Mall", "", "2026-11-17", "21:00"],
-      ["Gateway", "", "2026-11-19", "15:30"],
+      ["Gateway", "C11", "2026-11-15", "15:30"],
+      ["Gateway", "C16", "2026-11-18", "13:00"],
+      ["Gateway", "C16", "2026-11-19", "15:05"],
     ],
     "", ""
   ],
   [
     6, "Asian Next Wave", "Fruit Gathering", "Aung Phyoe", "", 97,
     [
-      ["Gateway", "", "2026-11-16", "20:00"],
-      ["TriNoma", "", "2026-11-19", "21:00"],
-      ["Fisher Mall", "", "2026-11-22", "19:30"],
+      ["Gateway", "C12", "2026-11-17", "12:30"],
+      ["Gateway", "C18", "2026-11-19", "12:45"],
+      ["Gateway", "C17", "2026-11-20", "20:20"],
     ],
     "", ""
   ],
   [
     7, "Asian Next Wave", "The Burning Giants", "Phuttiphong Aroonpheng", "", 114,
     [
-      ["Gateway", "", "2026-11-13", "18:00"],
-      ["Galleria", "", "2026-11-18", "17:30"],
-      ["TriNoma", "", "2026-11-19", "14:00"],
+      ["Gateway", "C12", "2026-11-17", "15:15"],
+      ["Gateway", "C12", "2026-11-18", "15:50"],
+      ["Fisher Mall", "C3", "2026-11-19", "14:50"],
     ],
     "", ""
   ],
   [
     8, "Asian Next Wave", "The World Before", "Yoon Da-bi", "", 115,
     [
-      ["Galleria", "", "2026-11-13", "16:00"],
-      ["Galleria", "", "2026-11-15", "17:30"],
-      ["TriNoma", "", "2026-11-17", "13:30"],
-      ["SM Fairview", "", "2026-11-17", "17:30"],
+      ["Gateway", "C11", "2026-11-16", "12:30"],
+      ["SM Fairview", "C2", "2026-11-20", "13:00"],
+      ["SM Fairview", "C2", "2026-11-21", "19:20"],
     ],
     "", ""
   ],
+
+  // NEW HORIZONS
   [
     9, "New Horizons", "Angh", "Theja Rio", "", 104,
     [
-      ["Gateway", "", "2026-11-17", "11:30"],
-      ["Gateway", "", "2026-11-21", "17:30"],
-      ["Gateway", "", "2026-11-21", "20:00"],
-      ["Fisher Mall", "", "2026-11-22", "20:00"],
+      ["Gateway", "C16", "2026-11-14", "15:00"],
+      ["TriNoma", "C3", "2026-11-17", "15:10"],
+      ["SM Fairview", "C2", "2026-11-20", "15:30"],
     ],
     "", ""
   ],
   [
     10, "New Horizons", "Baby Jackfruit Baby Guava", "Nông Nhật Quang", "", 105,
     [
-      ["TriNoma", "", "2026-11-17", "17:30"],
-      ["Fisher Mall", "", "2026-11-18", "11:30"],
-      ["TriNoma", "", "2026-11-22", "10:00"],
+      ["Gateway", "C16", "2026-11-14", "12:45"],
+      ["SM Fairview", "C2", "2026-11-19", "20:20"],
+      ["Gateway", "C17", "2026-11-20", "15:30"],
     ],
     "", ""
   ],
   [
     13, "New Horizons", "House of the Wind", "Auguste Kouemo Yanghu", "", 102,
     [
-      ["Galleria", "", "2026-11-13", "14:00"],
-      ["Fisher Mall", "", "2026-11-15", "16:00"],
-      ["Galleria", "", "2026-11-17", "19:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
+      ["Gateway", "C16", "2026-11-17", "15:00"],
+      ["Gateway", "C16", "2026-11-19", "17:10"],
+      ["SM Fairview", "C2", "2026-11-21", "21:45"],
     ],
     "", ""
   ],
   [
     11, "New Horizons", "Furies", "Rami Kodeih", "", 133,
     [
-      ["Fisher Mall", "", "2026-11-14", "17:30"],
-      ["Fisher Mall", "", "2026-11-16", "13:30"],
-      ["TriNoma", "", "2026-11-16", "20:00"],
+      ["Gateway", "C11", "2026-11-15", "21:00"],
+      ["Galleria", "C3", "2026-11-16", "15:10"],
+      ["Fisher Mall", "C3", "2026-11-19", "20:00"],
     ],
     "", ""
   ],
   [
     12, "New Horizons", "La Gradiva", "Marine Atlan", "", 145,
     [
-      ["Fisher Mall", "", "2026-11-15", "17:30"],
-      ["Fisher Mall", "", "2026-11-18", "14:00"],
+      ["Gateway", "C11", "2026-11-15", "12:30"],
+      ["TriNoma", "C3", "2026-11-16", "13:00"],
+      ["Gateway", "C16", "2026-11-21", "18:40"],
     ],
     "", ""
   ],
   [
     14, "New Horizons", "Sad Girlz", "Fernanda Tovar", "", 90,
     [
-      ["SM Fairview", "", "2026-11-13", "11:30"],
-      ["Galleria", "", "2026-11-13", "18:00"],
-      ["Galleria", "", "2026-11-16", "11:30"],
-      ["Fisher Mall", "", "2026-11-22", "14:00"],
+      ["Gateway", "C16", "2026-11-16", "13:00"],
+      ["TriNoma", "C3", "2026-11-18", "20:30"],
+      ["SM Fairview", "C2", "2026-11-21", "12:45"],
     ],
     "", ""
   ],
   [
     15, "New Horizons", "The Color of the Sun", "Xavier Tera", "", 111,
     [
-      ["Gateway", "", "2026-11-14", "15:30"],
-      ["SM Fairview", "", "2026-11-15", "13:30"],
+      ["Gateway", "C16", "2026-11-16", "15:00"],
+      ["Galleria", "C3", "2026-11-18", "19:45"],
+      ["SM Fairview", "C2", "2026-11-19", "15:00"],
     ],
     "", ""
   ],
   [
     16, "New Horizons", "We Are Aliens", "Kohei Kadowaki", "", 117,
     [
-      ["Fisher Mall", "", "2026-11-13", "18:00"],
-      ["Galleria", "", "2026-11-17", "18:00"],
-      ["TriNoma", "", "2026-11-17", "19:30"],
+      ["Gateway", "C16", "2026-11-17", "12:30"],
+      ["TriNoma", "C3", "2026-11-18", "18:00"],
+      ["SM Fairview", "C2", "2026-11-20", "17:45"],
     ],
     "", ""
   ],
+
+  // RAINBOWQC
   [
     17, "RainbowQC", "Big Little Things", "Michelle Zhou", "", 109,
     [
-      ["Fisher Mall", "", "2026-11-19", "18:00"],
-      ["SM Fairview", "", "2026-11-19", "20:00"],
-      ["Galleria", "", "2026-11-21", "16:00"],
+      ["Gateway", "C17", "2026-11-17", "14:50"],
+      ["Galleria", "C3", "2026-11-18", "15:10"],
+      ["SM Fairview", "C2", "2026-11-21", "14:45"],
     ],
     "", ""
   ],
   [
     18, "RainbowQC", "Flesh and Fuel", "Pierre Le Gall", "", 91,
     [
-      ["Gateway", "", "2026-11-14", "14:00"],
-      ["Gateway", "", "2026-11-16", "10:00"],
-      ["Fisher Mall", "", "2026-11-18", "14:00"],
-      ["Galleria", "", "2026-11-19", "15:30"],
+      ["Gateway", "C12", "2026-11-16", "19:40"],
+      ["Gateway", "C12", "2026-11-19", "19:00"],
+      ["Fisher Mall", "C3", "2026-11-20", "21:40"],
     ],
     "", ""
   ],
   [
     82, "RainbowQC", "Gugu's World", "Allan Deberton", "", 93,
-    [],
+    [
+      ["Gateway", "C12", "2026-11-16", "12:45"],
+      ["Galleria", "C3", "2026-11-18", "17:30"],
+      ["Gateway", "C17", "2026-11-20", "18:15"],
+    ],
     "", ""
   ],
   [
     19, "RainbowQC", "I Rarely Wake Up Dreaming", "Isabelle Stever", "", 100,
     [
-      ["TriNoma", "", "2026-11-16", "12:00"],
-      ["SM Fairview", "", "2026-11-20", "21:00"],
+      ["Gateway", "C16", "2026-11-15", "14:50"],
+      ["Galleria", "C3", "2026-11-17", "19:10"],
+      ["Gateway", "C16", "2026-11-18", "15:10"],
     ],
     "", ""
   ],
   [
     20, "RainbowQC", "Jim Queen", "Marco Nguyen & Nicolas Athané", "", 85,
     [
-      ["Galleria", "", "2026-11-20", "13:30"],
-      ["SM Fairview", "", "2026-11-21", "19:30"],
-      ["SM Fairview", "", "2026-11-22", "13:30"],
+      ["Gateway", "C16", "2026-11-14", "21:45"],
+      ["Galleria", "C3", "2026-11-16", "21:00"],
+      ["Fisher Mall", "C3", "2026-11-20", "19:45"],
     ],
     "", ""
   ],
   [
     21, "RainbowQC", "Little Trouble Girls", "Urška Djukić", "", 90,
     [
-      ["Galleria", "", "2026-11-13", "14:00"],
-      ["TriNoma", "", "2026-11-15", "10:00"],
-      ["Gateway", "", "2026-11-16", "13:30"],
+      ["Gateway", "C16", "2026-11-15", "12:45"],
+      ["Gateway", "C16", "2026-11-18", "19:30"],
+      ["Gateway", "C12", "2026-11-19", "17:00"],
     ],
     "", ""
   ],
   [
     22, "RainbowQC", "Lovers in the Blue Night", "Anuparna Roy", "", 107,
     [
-      ["TriNoma", "", "2026-11-13", "14:00"],
-      ["Gateway", "", "2026-11-17", "10:00"],
-      ["TriNoma", "", "2026-11-18", "10:00"],
-      ["TriNoma", "", "2026-11-21", "10:00"],
+      ["Gateway", "C12", "2026-11-16", "14:50"],
+      ["Galleria", "C3", "2026-11-17", "16:50"],
+      ["SM Fairview", "C2", "2026-11-20", "20:15"],
     ],
     "", ""
   ],
   [
     23, "RainbowQC", "Teenage Sex and Death at Camp Miasma", "Jane Schoenbrun", "", 112,
     [
-      ["Fisher Mall", "", "2026-11-15", "18:00"],
-      ["Galleria", "", "2026-11-22", "19:30"],
+      ["Gateway", "C16", "2026-11-14", "19:20"],
+      ["TriNoma", "C3", "2026-11-17", "12:45"],
+      ["Gateway", "C12", "2026-11-21", "18:15"],
     ],
     "", ""
   ],
-    [
+
+  // BEFORE MIDNIGHT
+  [
     25, "Before Midnight", "Arrested Memory", "SABU", "", 100,
     [
-      ["SM Fairview", "", "2026-11-14", "13:30"],
-      ["Gateway", "", "2026-11-16", "19:30"],
-      ["TriNoma", "", "2026-11-22", "15:30"],
+      ["TriNoma", "C3", "2026-11-17", "20:00"],
+      ["Gateway", "C16", "2026-11-18", "21:30"],
     ],
     "", ""
   ],
   [
     26, "Before Midnight", "Chronovisor", "Kevin Walker & Jack Auen", "", 99,
     [
-      ["Galleria", "", "2026-11-15", "19:30"],
-      ["SM Fairview", "", "2026-11-19", "13:30"],
-      ["Fisher Mall", "", "2026-11-20", "17:30"],
+      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-16", "20:45"],
+      ["Gateway", "C17", "2026-11-21", "15:00"],
     ],
     "", ""
   ],
   [
     27, "Before Midnight", "I Love Paris", "Nicky Murphy", "", 120,
     [
-      ["SM Fairview", "", "2026-11-13", "16:00"],
-      ["TriNoma", "", "2026-11-13", "17:30"],
-      ["Gateway", "", "2026-11-20", "12:00"],
-      ["Gateway", "", "2026-11-21", "13:30"],
+      ["Gateway", "C16", "2026-11-17", "17:15"],
+      ["Gateway", "C16", "2026-11-19", "19:30"],
     ],
     "", ""
   ],
   [
     28, "Before Midnight", "Moonglow", "Isabel Sandoval", "", 108,
     [
-      ["Gateway", "", "2026-11-14", "21:00"],
-      ["Gateway", "", "2026-11-21", "17:30"],
+      ["Gateway", "C11", "2026-11-16", "20:00"],
+      ["Gateway", "C12", "2026-11-20", "13:00"],
     ],
     "", ""
   ],
   [
     29, "Before Midnight", "The Unknown", "Arthur Harari", "", 140,
     [
-      ["Galleria", "", "2026-11-17", "15:30"],
-      ["TriNoma", "", "2026-11-20", "10:00"],
+      ["Gateway", "C17", "2026-11-18", "21:20"],
+      ["Gateway", "C12", "2026-11-21", "20:45"],
     ],
     "", ""
-  ],
+  ],  // QCSELECTS
   [
     30, "QCSelects", "11", "Bebe Go", "", 61,
     [
-      ["Fisher Mall", "", "2026-11-13", "16:00"],
-      ["TriNoma", "", "2026-11-17", "20:00"],
-      ["TriNoma", "", "2026-11-22", "17:30"],
+      ["Gateway", "C16", "2026-11-15", "18:08", "Q&A"],
+      ["Fisher Mall", "C3", "2026-11-19", "18:23"],
     ],
     "", ""
   ],
   [
     79, "QCSelects", "A is for Agustin", "Grace Pimentel Simbulan", "", 74,
-    [],
+    [
+      ["Fisher Mall", "C3", "2026-11-21", "12:45", "Q&A"],
+    ],
     "", ""
   ],
   [
     80, "QCSelects", "Agos, Ang Batang Isla", "Ced Hornedo", "", 10,
-    [],
+    [
+      ["Fisher Mall", "C3", "2026-11-21", "12:45", "Q&A"],
+    ],
     "", ""
   ],
   [
     31, "QCSelects", "You Are The Film", "Makoto Ueda", "", 68,
     [
-      ["Fisher Mall", "", "2026-11-14", "17:30"],
-      ["Gateway", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-20", "17:30"],
-      ["TriNoma", "", "2026-11-22", "17:30"],
+      ["Gateway", "C16", "2026-11-15", "17:00"],
+      ["Fisher Mall", "C3", "2026-11-19", "17:15"],
+      ["Gateway", "C16", "2026-11-21", "12:30", "Q&A"],
     ],
     "", ""
   ],
   [
     32, "QCSelects", "Club Kid", "Jordan Firstman", "", 126,
     [
-      ["Fisher Mall", "", "2026-11-14", "19:30"],
-      ["Fisher Mall", "", "2026-11-18", "13:30"],
-      ["Gateway", "", "2026-11-19", "13:30"],
+      ["Gateway", "C12", "2026-11-14", "20:30"],
     ],
     "", ""
   ],
   [
     33, "QCSelects", "Fucktoys", "Annapurna Sriram", "", 106,
     [
-      ["TriNoma", "", "2026-11-14", "13:30"],
-      ["Gateway", "", "2026-11-18", "14:00"],
+      ["Gateway", "C16", "2026-11-15", "22:00"],
+      ["Gateway", "C18", "2026-11-19", "20:45"],
     ],
     "", ""
   ],
   [
     34, "QCSelects", "i grew an inch when my father died", "P.R. Patindol", "", 74,
     [
-      ["Fisher Mall", "", "2026-11-15", "18:00"],
-      ["Gateway", "", "2026-11-16", "11:30"],
-      ["Gateway", "", "2026-11-17", "19:30"],
-      ["Fisher Mall", "", "2026-11-22", "17:30"],
+      ["Gateway", "C11", "2026-11-16", "17:40", "Q&A"],
+      ["Gateway", "C17", "2026-11-21", "12:45", "Q&A"],
     ],
     "", ""
   ],
   [
     35, "QCSelects", "Ibuku", "Eddie Cahyono", "", 95,
     [
-      ["Fisher Mall", "", "2026-11-14", "15:30"],
-      ["Gateway", "", "2026-11-16", "11:30"],
-      ["TriNoma", "", "2026-11-16", "19:30"],
+      ["Gateway", "C12", "2026-11-18", "18:15"],
+      ["Gateway", "C18", "2026-11-19", "15:00"],
     ],
     "", ""
   ],
   [
     36, "QCSelects", "Look Back", "Hirokazu Kore-eda", "", 100,
     [
-      ["SM Fairview", "", "2026-11-16", "17:30"],
-      ["SM Fairview", "", "2026-11-17", "15:30"],
+      ["Gateway", "C12", "2026-11-22", "20:30"],
     ],
     "", ""
   ],
   [
     37, "QCSelects", "The Remotes", "John Torres", "", 153,
     [
-      ["Gateway", "", "2026-11-14", "15:30"],
-      ["SM Fairview", "", "2026-11-16", "10:00"],
+      ["Gateway", "C16", "2026-11-20", "19:40", "Q&A"],
+      ["Gateway", "C16", "2026-11-21", "12:30", "Q&A"],
     ],
     "", ""
   ],
   [
     38, "QCSelects", "The Tigers", "Alberto Rodríguez", "", 109,
     [
-      ["TriNoma", "", "2026-11-13", "15:30"],
-      ["Fisher Mall", "", "2026-11-13", "20:00"],
-      ["SM Fairview", "", "2026-11-19", "12:00"],
+      ["Gateway", "C12", "2026-11-20", "17:15"],
     ],
     "", ""
   ],
+
+  // REDISCOVERY
   [
     39, "Rediscovery", "Amores Perros", "Alejandro González Iñárritu", "", 154,
     [
-      ["SM Fairview", "", "2026-11-15", "19:30"],
-      ["Fisher Mall", "", "2026-11-16", "14:00"],
-      ["Gateway", "", "2026-11-16", "18:00"],
-      ["Fisher Mall", "", "2026-11-22", "10:00"],
+      ["Gateway", "C12", "2026-11-14", "12:30"],
+      ["Gateway", "C17", "2026-11-22", "20:45"],
     ],
     "", ""
   ],
   [
     40, "Rediscovery", "Batang West Side", "Lav Diaz", "", 301,
     [
-      ["TriNoma", "", "2026-11-13", "21:00"],
-      ["Gateway", "", "2026-11-18", "21:00"],
-      ["TriNoma", "", "2026-11-21", "16:00"],
-      ["Gateway", "", "2026-11-22", "13:30"],
+      ["Gateway", "C16", "2026-11-20", "12:30"],
     ],
     "", ""
   ],
   [
     41, "Rediscovery", "Patay Na Si Hesus", "Victor Villanueva", "", 90,
     [
-      ["TriNoma", "", "2026-11-13", "14:00"],
-      ["TriNoma", "", "2026-11-17", "18:00"],
+      ["Gateway", "C12", "2026-11-22", "18:30"],
     ],
     "", ""
   ],
   [
     42, "Rediscovery", "Possession", "Andrzej Żuławski", "", 124,
     [
-      ["TriNoma", "", "2026-11-18", "11:30"],
-      ["SM Fairview", "", "2026-11-20", "14:00"],
-      ["TriNoma", "", "2026-11-21", "20:00"],
-      ["TriNoma", "", "2026-11-22", "14:00"],
+      ["Gateway", "C12", "2026-11-18", "20:30"],
     ],
     "", ""
   ],
   [
     43, "Rediscovery", "Jaguar", "Lino Brocka", "", 100,
     [
-      ["Galleria", "", "2026-11-13", "14:00"],
-      ["Fisher Mall", "", "2026-11-13", "20:00"],
-      ["Galleria", "", "2026-11-17", "20:00"],
-      ["Fisher Mall", "", "2026-11-18", "10:00"],
+      ["Gateway", "C16", "2026-11-22", "12:30"],
     ],
     "", ""
   ],
   [
     44, "Rediscovery", "Perfect Blue", "Satoshi Kon", "", 81,
     [
-      ["Fisher Mall", "", "2026-11-14", "11:30"],
-      ["Gateway", "", "2026-11-16", "21:00"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-      ["Fisher Mall", "", "2026-11-20", "16:00"],
+      ["Gateway", "C5", "2026-11-14", "21:00"],
+      ["Gateway", "C12", "2026-11-17", "18:15"],
     ],
     "", ""
   ],
   [
     45, "Rediscovery", "Sister Stella L.", "Mike de Leon", "", 103,
     [
-      ["Gateway", "", "2026-11-18", "19:30"],
-      ["Fisher Mall", "", "2026-11-20", "20:00"],
-      ["Gateway", "", "2026-11-21", "10:00"],
+      ["Gateway", "C16", "2026-11-22", "14:50"],
+    ],
+    "", ""
+  ],
+
+  // DOKYU DAYS
+  [
+    46, "Dokyu Days", "Bomba Bernal", "Documentary", "", 69,
+    [
+      ["Gateway", "C16", "2026-11-20", "18:00"],
     ],
     "", ""
   ],
   [
-    46, "Dokyu Days", "Bomba Bernal", "Khavn", "", 69,
+    47, "Dokyu Days", "I Deserve a Lover Whose Every Rise Sets Fiery Dooms Racing Across", "Documentary", "", 76,
     [
-      ["SM Fairview", "", "2026-11-13", "18:00"],
-      ["SM Fairview", "", "2026-11-16", "13:30"],
-      ["TriNoma", "", "2026-11-16", "15:30"],
-      ["TriNoma", "", "2026-11-19", "13:30"],
+      ["Galleria", "C3", "2026-11-17", "15:00"],
+      ["Fisher Mall", "C3", "2026-11-19", "13:00"],
     ],
     "", ""
   ],
   [
-    47, "Dokyu Days", "I Deserve A Lover Whose Every Rise Sets Fiery Dooms Raging Across the Sky", "Mani Haghighi", "", 76,
+    48, "Dokyu Days", "The Illusion of an Everlasting Summer", "Documentary", "", 94,
     [
-      ["Gateway", "", "2026-11-15", "18:00"],
-      ["SM Fairview", "", "2026-11-18", "16:00"],
-      ["SM Fairview", "", "2026-11-21", "13:30"],
+      ["Galleria", "C3", "2026-11-18", "13:00"],
+      ["Fisher Mall", "C3", "2026-11-20", "15:00"],
     ],
     "", ""
   ],
   [
-    48, "Dokyu Days", "To the Moon and Back", "Elisa Gómez Álvarez", "", 85,
+    49, "Dokyu Days", "To the Moon and Back", "Documentary", "", 114,
     [
-      ["Fisher Mall", "", "2026-11-19", "11:30"],
-      ["SM Fairview", "", "2026-11-21", "20:00"],
-      ["Galleria", "", "2026-11-22", "20:00"],
+      ["Gateway", "C17", "2026-11-18", "12:30", "Q&A"],
+      ["Gateway", "C12", "2026-11-19", "12:30", "Q&A"],
     ],
     "", ""
   ],
   [
-    49, "Dokyu Days", "The Illusion of an Everlasting Summer", "Alessandra Sanguinetti", "", 94,
+    50, "Dokyu Days", "Union Town", "Documentary", "", 106,
     [
-      ["TriNoma", "", "2026-11-15", "10:00"],
-      ["SM Fairview", "", "2026-11-20", "21:00"],
-      ["SM Fairview", "", "2026-11-22", "18:00"],
-      ["Fisher Mall", "", "2026-11-22", "21:00"],
+      ["Galleria", "C3", "2026-11-16", "12:45"],
+      ["Gateway", "C17", "2026-11-17", "12:30"],
     ],
     "", ""
   ],
   [
-    50, "Dokyu Days", "Union Town", "Barbara Kopple", "", 106,
+    51, "Dokyu Days", "You Can See Everything", "Documentary", "", 174,
     [
-      ["Galleria", "", "2026-11-15", "10:00"],
-      ["TriNoma", "", "2026-11-19", "12:00"],
+      ["Gateway", "C12", "2026-11-17", "20:15"],
+    ],
+    "", ""
+  ],
+
+  // QC SHORTS INTERNATIONAL — CONSOLIDATED PROGRAMS
+  [
+    52, "QCShorts International", "QCShorts Program 1: At Night We Lead Different Lives", "", "", 106,
+    [
+      ["Gateway", "C12", "2026-11-15", "18:15", "Q&A"],
+      ["Gateway", "C12", "2026-11-16", "17:10", "Q&A"],
+      ["Gateway", "C17", "2026-11-18", "19:20"],
+      ["Gateway", "C17", "2026-11-21", "21:00"],
     ],
     "", ""
   ],
   [
-    81, "Dokyu Days", "You Can See Everything", "Nathan Fielder & Lance Oppenheim", "", 174,
-    [],
-    "", ""
-  ],
+    53, "QCShorts International", "QCShorts Program 2: A Little Blasphemy Never Hurt Anyone", "", "", 123,
     [
-    51, "QCShorts International", "And if Thuy Didn't Exist", "Carlo Francisco Manatad", "Program 1: Rotten Work", 16,
-    [
-      ["Galleria", "", "2026-11-16", "15:30"],
-      ["SM Fairview", "", "2026-11-17", "13:30"],
-      ["Gateway", "", "2026-11-17", "16:00"],
+      ["Gateway", "C12", "2026-11-15", "20:45", "Q&A"],
+      ["Gateway", "C16", "2026-11-16", "20:30", "Q&A"],
+      ["Gateway", "C16", "2026-11-19", "13:00"],
+      ["Gateway", "C16", "2026-11-21", "21:35"],
     ],
     "", ""
   ],
   [
-    52, "QCShorts International", "Body Works", "Maki Makilan", "Program 1: Rotten Work", 90,
+    54, "QCShorts International", "QCShorts Program 3: All Mothers Were Once Girls", "", "", 116,
     [
-      ["Galleria", "", "2026-11-16", "15:30"],
-      ["SM Fairview", "", "2026-11-17", "13:30"],
-      ["Gateway", "", "2026-11-17", "16:00"],
+      ["Gateway", "C12", "2026-11-15", "13:00", "Q&A"],
+      ["Gateway", "C17", "2026-11-17", "17:15"],
+      ["SM Fairview", "C2", "2026-11-19", "13:00"],
+      ["Gateway", "C16", "2026-11-21", "16:10", "Q&A"],
     ],
     "", ""
   ],
   [
-    53, "QCShorts International", "Is This Desire?", "Apa Agbayani", "Program 1: Rotten Work", 16,
+    55, "QCShorts International", "QCShorts Program 4: The Mountains Always Ask for More", "", "", 129,
     [
-      ["Galleria", "", "2026-11-16", "15:30"],
-      ["SM Fairview", "", "2026-11-17", "13:30"],
-      ["Gateway", "", "2026-11-17", "16:00"],
+      ["Gateway", "C12", "2026-11-15", "15:30", "Q&A"],
+      ["Gateway", "C17", "2026-11-17", "19:15", "Q&A"],
+      ["Gateway", "C17", "2026-11-18", "16:40", "Q&A"],
+      ["SM Fairview", "C2", "2026-11-21", "17:10"],
+    ],
+    "", ""
+  ],  // SCREEN INTERNATIONAL — LETTERBOXD #25–33
+  [
+    70, "Screen International", "A Long Winter", "", "", 118,
+    [
+      ["TriNoma", "C3", "2026-11-16", "16:00"],
+      ["Galleria", "C3", "2026-11-17", "21:20"],
+      ["Gateway", "C12", "2026-11-21", "12:45"],
     ],
     "", ""
   ],
   [
-    54, "QCShorts International", "She Said", "Ivan Tan", "Program 1: Rotten Work", 21,
+    78, "Screen International", "Everytime", "", "", 124,
     [
-      ["Galleria", "", "2026-11-16", "15:30"],
-      ["SM Fairview", "", "2026-11-17", "13:30"],
-      ["Gateway", "", "2026-11-17", "16:00"],
+      ["Gateway", "C16", "2026-11-17", "20:15"],
+      ["Fisher Mall", "C3", "2026-11-20", "17:10"],
+      ["Gateway", "C12", "2026-11-22", "15:45"],
     ],
     "", ""
   ],
   [
-    55, "QCShorts International", "Through the Cracks", "Lê Hoàng", "Program 1: Rotten Work", 14,
+    71, "Screen International", "Fatherland", "", "", 82,
     [
-      ["Galleria", "", "2026-11-16", "15:30"],
-      ["SM Fairview", "", "2026-11-17", "13:30"],
-      ["Gateway", "", "2026-11-17", "16:00"],
+      ["Gateway", "C12", "2026-11-20", "15:20"],
+      ["Gateway", "C17", "2026-11-21", "19:00"],
+      ["Gateway", "C17", "2026-11-22", "13:00"],
     ],
     "", ""
   ],
   [
-    56, "QCShorts International", "Bleat!", "Ananth Subramaniam", "Program 2: A Little Blasphemy Never Hurt Anyone", 15,
+    72, "Screen International", "Fjord", "", "", 146,
     [
-      ["Galleria", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Galleria", "", "2026-11-22", "11:30"],
+      ["Gateway", "C5", "2026-11-14", "12:30"],
+      ["Gateway", "C16", "2026-11-16", "18:00"],
+      ["Gateway", "C12", "2026-11-21", "15:15"],
     ],
     "", ""
   ],
   [
-    57, "QCShorts International", "Fruit", "Jen Nee Lim", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
+    73, "Screen International", "Makikiraan Po", "", "", 181,
     [
-      ["Galleria", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Galleria", "", "2026-11-22", "11:30"],
+      ["Gateway", "C18", "2026-11-19", "17:10", "Q&A"],
+      ["Gateway", "C17", "2026-11-22", "17:40"],
     ],
     "", ""
   ],
   [
-    58, "QCShorts International", "Run Shirley Run!", "Rodiell Veloso", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
+    74, "Screen International", "Nowhere to Lay My Eyes", "", "", 72,
     [
-      ["Galleria", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Galleria", "", "2026-11-22", "11:30"],
+      ["Gateway", "C16", "2026-11-15", "20:10"],
+      ["Gateway", "C17", "2026-11-18", "14:55"],
+      ["Gateway", "C17", "2026-11-21", "17:15"],
     ],
     "", ""
   ],
   [
-    59, "QCShorts International", "The Bovine Comedy", "Ratchapoom Boonbunchachoke", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
+    75, "Screen International", "The Beloved", "", "", 135,
     [
-      ["Galleria", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Galleria", "", "2026-11-22", "11:30"],
+      ["Gateway", "C12", "2026-11-20", "19:45"],
+      ["Fisher Mall", "C3", "2026-11-21", "15:15"],
+      ["Gateway", "C17", "2026-11-22", "14:55"],
     ],
     "", ""
   ],
   [
-    60, "QCShorts International", "The Dream is a Snail", "Thien An Nguyen", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
+    76, "Screen International", "The Diary of a Chambermaid", "", "", 94,
     [
-      ["Galleria", "", "2026-11-17", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Galleria", "", "2026-11-22", "11:30"],
+      ["Gateway", "C16", "2026-11-14", "17:15"],
+      ["Gateway", "C16", "2026-11-18", "17:20"],
+      ["Gateway", "C12", "2026-11-19", "14:55"],
     ],
     "", ""
   ],
   [
-    61, "QCShorts International", "Gandang Lola", "Kylechandler Bigay", "Program 3: All Mothers Were Once Girls", 90,
+    77, "Screen International", "Vintage Violence", "", "", 105,
     [
-      ["Fisher Mall", "", "2026-11-13", "14:00"],
-      ["Gateway", "", "2026-11-19", "13:30"],
-      ["Galleria", "", "2026-11-22", "19:30"],
-    ],
-    "", ""
-  ],
-  [
-    62, "QCShorts International", "Maanaa Kanimo", "Toni Cañete", "Program 3: All Mothers Were Once Girls", 90,
-    [
-      ["Fisher Mall", "", "2026-11-13", "14:00"],
-      ["Gateway", "", "2026-11-19", "13:30"],
-      ["Galleria", "", "2026-11-22", "19:30"],
-    ],
-    "", ""
-  ],
-  [
-    63, "QCShorts International", "Sana’y Nandito Ka", "Clister Santos", "Program 3: All Mothers Were Once Girls", 90,
-    [
-      ["Fisher Mall", "", "2026-11-13", "14:00"],
-      ["Gateway", "", "2026-11-19", "13:30"],
-      ["Galleria", "", "2026-11-22", "19:30"],
-    ],
-    "", ""
-  ],
-  [
-    64, "QCShorts International", "The 4Ply Clandestine System", "Natalie Sin", "Program 3: All Mothers Were Once Girls", 90,
-    [
-      ["Fisher Mall", "", "2026-11-13", "14:00"],
-      ["Gateway", "", "2026-11-19", "13:30"],
-      ["Galleria", "", "2026-11-22", "19:30"],
-    ],
-    "", ""
-  ],
-  [
-    65, "QCShorts International", "Agsangit Laeng Ti Al-alia", "Carla Pulido Ocampo", "Program 4: The Mountains Always Asks For More", 90,
-    [
-      ["Fisher Mall", "", "2026-11-14", "13:30"],
-      ["Fisher Mall", "", "2026-11-19", "19:30"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    66, "QCShorts International", "Golden Island", "Arief Budiman", "Program 4: The Mountains Always Asks For More", 90,
-    [
-      ["Fisher Mall", "", "2026-11-14", "13:30"],
-      ["Fisher Mall", "", "2026-11-19", "19:30"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    67, "QCShorts International", "Incident on the Mountain", "Savunthara Seng", "Program 4: The Mountains Always Asks For More", 90,
-    [
-      ["Fisher Mall", "", "2026-11-14", "13:30"],
-      ["Fisher Mall", "", "2026-11-19", "19:30"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    68, "QCShorts International", "Obscura", "Timoteus Anggawan Kusno", "Program 4: The Mountains Always Asks For More", 90,
-    [
-      ["Fisher Mall", "", "2026-11-14", "13:30"],
-      ["Fisher Mall", "", "2026-11-19", "19:30"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    69, "QCShorts International", "They Made Monsters", "Jaime Morados", "Program 4: The Mountains Always Asks For More", 90,
-    [
-      ["Fisher Mall", "", "2026-11-14", "13:30"],
-      ["Fisher Mall", "", "2026-11-19", "19:30"],
-      ["Galleria", "", "2026-11-19", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    70, "Screen International", "A Long Winter", "Andrew Haigh", "", 118,
-    [
-      ["Galleria", "", "2026-11-17", "15:30"],
-      ["Galleria", "", "2026-11-18", "17:30"],
-      ["Fisher Mall", "", "2026-11-20", "18:00"],
-      ["Galleria", "", "2026-11-20", "19:30"],
-    ],
-    "", ""
-  ],
-  [
-    78, "Screen International", "Everytime", "Sandra Wollner", "", 123,
-    [],
-    "", ""
-  ],
-  [
-    71, "Screen International", "Fatherland", "Paweł Pawlikowski", "", 82,
-    [
-      ["Galleria", "", "2026-11-13", "21:00"],
-      ["Galleria", "", "2026-11-14", "10:00"],
-      ["SM Fairview", "", "2026-11-15", "13:30"],
-      ["SM Fairview", "", "2026-11-17", "14:00"],
-    ],
-    "", ""
-  ],
-  [
-    72, "Screen International", "Fjord", "Cristian Mungiu", "", 146,
-    [
-      ["Gateway", "", "2026-11-15", "13:30"],
-      ["Galleria", "", "2026-11-19", "16:00"],
-      ["Gateway", "", "2026-11-22", "11:30"],
-    ],
-    "", ""
-  ],
-  [
-    73, "Screen International", "Makikiraan Po", "Lav Diaz", "", 151,
-    [
-      ["Galleria", "", "2026-11-18", "11:30"],
-      ["Galleria", "", "2026-11-19", "10:00"],
-      ["Fisher Mall", "", "2026-11-20", "13:30"],
-      ["TriNoma", "", "2026-11-21", "21:00"],
-    ],
-    "", ""
-  ],
-  [
-    74, "Screen International", "Nowhere to Lay My Eyes", "Hong Sang-soo", "", 72,
-    [
-      ["Gateway", "", "2026-11-14", "18:00"],
-      ["Galleria", "", "2026-11-18", "12:00"],
-      ["Fisher Mall", "", "2026-11-21", "10:00"],
-    ],
-    "", ""
-  ],
-  [
-    75, "Screen International", "The Beloved", "Rodrigo Sorogoyen", "", 136,
-    [
-      ["Fisher Mall", "", "2026-11-15", "10:00"],
-      ["Galleria", "", "2026-11-19", "18:00"],
-      ["TriNoma", "", "2026-11-19", "18:00"],
-      ["Fisher Mall", "", "2026-11-20", "13:30"],
-    ],
-    "", ""
-  ],
-  [
-    76, "Screen International", "The Diary of A Chambermaid", "Radu Jude", "", 94,
-    [
-      ["SM Fairview", "", "2026-11-13", "10:00"],
-      ["TriNoma", "", "2026-11-14", "19:30"],
-      ["TriNoma", "", "2026-11-19", "10:00"],
-      ["Gateway", "", "2026-11-22", "15:30"],
-    ],
-    "", ""
-  ],
-  [
-    77, "Screen International", "Vintage Violence", "Eugene Kotlyarenko", "", 105,
-    [
-      ["TriNoma", "", "2026-11-13", "19:30"],
-      ["Gateway", "", "2026-11-19", "13:30"],
-      ["TriNoma", "", "2026-11-19", "19:30"],
-      ["TriNoma", "", "2026-11-21", "15:30"],
+      ["Gateway", "C12", "2026-11-14", "15:35"],
+      ["TriNoma", "C3", "2026-11-16", "18:30"],
+      ["Gateway", "C12", "2026-11-19", "21:00"],
     ],
     "", ""
   ],
 ];
 
+// Letterboxd lineup numbers for Screen International
+const LETTERBOXD_INDEX = {
+  70: 25, // A Long Winter
+  78: 26, // Everytime
+  71: 27, // Fatherland
+  72: 28, // Fjord
+  73: 29, // Let Us Through, Dear Ancestors / Makikiraan Po
+  74: 30, // Nowhere to Lay My Eyes
+  75: 31, // The Beloved
+  76: 32, // The Diary of a Chambermaid
+  77: 33, // Vintage Violence
+};
+
+// Build the movie objects
 const movies = filmRows.map(
   ([
     id,
@@ -1099,14 +961,43 @@ const movies = filmRows.map(
     director,
     program,
     runtime,
-    color: program ? SHORTS_PROGRAM_COLORS[program] : PROGRAM_COLORS[category],
-    schedule: slots.map(([cinema, date, time]) => ({
-      cinema,
-      date,
-      time,
-    })),
-    poster: MOVIE_DETAILS[id]?.poster || "",
-    letterboxd: MOVIE_DETAILS[id]?.letterboxd || "",
+
+    color: program
+      ? SHORTS_PROGRAM_COLORS[program]
+      : PROGRAM_COLORS[category],
+
+    letterboxdIndex: LETTERBOXD_INDEX[id] || null,
+
+    schedule: slots.map((slot) => {
+      // New format: [venue, cinema, date, time, note]
+      if (slot.length >= 4) {
+        const [venue, screen, date, time, note = ""] = slot;
+
+        return {
+          cinema: screen ? `${venue} · ${screen}` : venue,
+          venue,
+          screen,
+          date,
+          time,
+          note,
+        };
+      }
+
+      // Old format fallback: [venue, date, time]
+      const [venue, date, time] = slot;
+
+      return {
+        cinema: venue,
+        venue,
+        screen: "",
+        date,
+        time,
+        note: "",
+      };
+    }),
+
+    poster: MOVIE_DETAILS[id]?.poster || poster || "",
+    letterboxd: MOVIE_DETAILS[id]?.letterboxd || letterboxd || "",
   }),
 );
 
