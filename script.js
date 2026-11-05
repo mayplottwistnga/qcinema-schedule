@@ -5,6 +5,8 @@ let currentScreeningsPage = 1;
 const SHORTS_SET_RUNTIME = 95;
 
 
+
+
 const MOVIE_DETAILS = {
   1: {
     poster: "poster/9-temples.jpg",
@@ -47,15 +49,15 @@ const MOVIE_DETAILS = {
     poster: "poster/baby.jpg",
     letterboxd: "https://letterboxd.com/film/baby-jackfruit-baby-guava/",
   },
-  11: {
-    poster: "poster/fictions.jpg",
-    letterboxd: "https://letterboxd.com/film/beach-fictions/",
+  13: {
+    poster: "poster/house.jpg",
+    letterboxd: "https://letterboxd.com/film/house-of-the-wind/",
   },
-  12: {
+  11: {
     poster: "poster/furies.jpg",
     letterboxd: "https://letterboxd.com/film/furies-2026/",
   },
-  13: {
+  12: {
     poster: "poster/gradiva.jpg",
     letterboxd: "https://letterboxd.com/film/la-gradiva/",
   },
@@ -99,10 +101,6 @@ const MOVIE_DETAILS = {
     poster: "poster/teenage.jpg",
     letterboxd:
       "https://letterboxd.com/film/teenage-sex-and-death-at-camp-miasma/",
-  },
-  24: {
-    poster: "poster/riverbank.jpg",
-    letterboxd: "https://letterboxd.com/film/the-riverbank-2026/",
   },
   25: {
     poster: "poster/arrested.jpg",
@@ -318,7 +316,27 @@ const MOVIE_DETAILS = {
   77: {
     poster: "poster/vintage.jpg",
     letterboxd: "https://letterboxd.com/film/vintage-violence/",
-  }
+  },
+  78: {
+    poster: "poster/everytime.jpg",
+    letterboxd: "https://letterboxd.com/film/everytime/",
+  },
+  79: {
+    poster: "poster/a-is-for-agustin.jpg",
+    letterboxd: "https://letterboxd.com/film/a-is-for-agustin/",
+  },
+  80: {
+    poster: "poster/agos-ang-batang-isla.jpg",
+    letterboxd: "",
+  },
+  81: {
+    poster: "poster/see.jpg",
+    letterboxd: "https://letterboxd.com/film/you-can-see-everything/",
+  },
+  82: {
+    poster: "poster/gugu.jpg",
+    letterboxd: "https://letterboxd.com/film/gugus-world/",
+  },
 };
 
 const PROGRAM_COLORS = {
@@ -339,6 +357,7 @@ const SHORTS_PROGRAM_COLORS = {
   "Program 3: All Mothers Were Once Girls": "#7956A5",
   "Program 4: The Mountains Always Asks For More": "#408D78",
 };
+
 
 const filmRows = [
   [
@@ -473,10 +492,10 @@ const filmRows = [
     ],
   ],
   [
-    11,
+    13,
     "New Horizons",
-    "Beach Fictions",
-    "Lim Ha-yeon",
+    "House of the Wind",
+    "Auguste Kouemo Yanghu",
     "",
     145,
     [
@@ -487,7 +506,7 @@ const filmRows = [
     ],
   ],
   [
-    12,
+    11,
     "New Horizons",
     "Furies",
     "Rami Kodeih",
@@ -500,7 +519,7 @@ const filmRows = [
     ],
   ],
   [
-    13,
+    12,
     "New Horizons",
     "La Gradiva",
     "Marine Atlan",
@@ -579,6 +598,15 @@ const filmRows = [
     ],
   ],
   [
+    82,
+    "RainbowQC",
+    "Gugu's World",
+    "Allan Deberton",
+    "",
+    93,
+    [],
+  ],
+  [
     19,
     "RainbowQC",
     "I Rarely Wake Up Dreaming",
@@ -642,22 +670,8 @@ const filmRows = [
       ["Robinsons Galleria", "2026-11-22", "19:30"],
     ],
   ],
-  [
-    24,
-    "RainbowQC",
-    "The Riverback",
-    "Matheus Farias & Enock Carvalho",
-    "",
-    117,
+  
     [
-      ["Gateway", "2026-11-15", "19:30"],
-      ["SM Fairview", "2026-11-18", "14:00"],
-      ["Gateway", "2026-11-19", "10:00"],
-      ["Robinsons Galleria", "2026-11-20", "19:30"],
-    ],
-  ],
-
-  [
     25,
     "Before Midnight",
     "Arrested Memory",
@@ -734,6 +748,24 @@ const filmRows = [
       ["Trinoma", "2026-11-17", "20:00"],
       ["Trinoma", "2026-11-22", "17:30"],
     ],
+  ],
+  [
+    79,
+    "QCSelects",
+    "A is for Agustin",
+    "Grace Pimentel Simbulan",
+    "",
+    74,
+    [],
+  ],
+  [
+    80,
+    "QCSelects",
+    "Agos, Ang Batang Isla",
+    "Ced Hornedo",
+    "",
+    10,
+    [],
   ],
   [
     31,
@@ -934,8 +966,7 @@ const filmRows = [
       ["Gateway", "2026-11-21", "10:00"],
     ],
   ],
-
-  [
+    [
     46,
     "Dokyu Days",
     "Bomba Bernal",
@@ -1000,6 +1031,15 @@ const filmRows = [
       ["Robinsons Galleria", "2026-11-15", "10:00"],
       ["Trinoma", "2026-11-19", "12:00"],
     ],
+  ],
+  [
+    81,
+    "Dokyu Days",
+    "You Can See Everything",
+    "Nathan Fielder & Lance Oppenheim",
+    "",
+    174,
+    [],
   ],
 
   [
@@ -1268,6 +1308,15 @@ const filmRows = [
     ],
   ],
   [
+    78,
+    "Screen International",
+    "Everytime",
+    "Sandra Wollner",
+    "",
+    123,
+    [],
+  ],
+  [
     71,
     "Screen International",
     "Fatherland",
@@ -1479,31 +1528,63 @@ function save() {
   }
 }
 
+
 const syncCalendarBtn = document.getElementById("syncCalendarBtn");
 const exportAllCalendarBtn = document.getElementById("exportAllCalendarBtn");
 
-// Replace this with your actual scheduled-screenings array.
 function getScheduledScreenings() {
   return scheduledScreenings;
 }
 
+// EXPORT ALL: Download visual calendar as PNG
+if (exportAllCalendarBtn) {
+  exportAllCalendarBtn.addEventListener("click", saveCalendarAsImage);
+}
+
+// SYNC CALENDAR: Download screenings as ICS
 if (syncCalendarBtn) {
   syncCalendarBtn.addEventListener("click", () => {
     const screenings = getScheduledScreenings();
 
-    if (screenings.length === 0) {
-      alert("Please add screenings to your schedule first.");
+    if (!screenings.length) {
+      alert("Add at least one screening first.");
       return;
     }
 
-    // Export the scheduled events as a calendar file.
-    exportAllScreeningsToCalendar(screenings);
+    const events = screenings.map(screening => {
+      const movie = getMovie(screening.movieId);
+
+      if (!movie) return "";
+
+      const runtime = Number(
+        screening.runtime || movie.runtime || 90
+      );
+
+      const [hour, minute] = screening.start.split(":").map(Number);
+
+      const totalMinutes = hour * 60 + minute + runtime;
+
+      const endHour = Math.floor(totalMinutes / 60) % 24;
+      const endMinute = totalMinutes % 60;
+
+      const endTime24 =
+        String(endHour).padStart(2, "0") + ":" +
+        String(endMinute).padStart(2, "0");
+
+      return createICSEvent({
+        title: screening.program || movie.title,
+        date: screening.date,
+        startTime: screening.start,
+        endTime: endTime24,
+        location: screening.cinema,
+        description: "QCinema 2026 Film Screening"
+      });
+    });
+
+    downloadICS(events, "qcinema-2026-calendar.ics");
   });
 }
 
-if (exportAllCalendarBtn) {
-  exportAllCalendarBtn.addEventListener("click", saveCalendarAsImage);
-}
 
 /* =========================================
    GENERAL HELPERS
@@ -2697,93 +2778,106 @@ function renderScreenings() {
    CALENDAR
 ========================================= */
 
+
 function renderCalendar() {
   if (!calendar) return;
 
-  if (scheduledScreenings.length === 0) {
-    calendar.innerHTML = `
-            <div class="calendar-empty">
-                Your schedule will appear here once you add screenings.
-            </div>
-        `;
-    return;
-  }
+  const dates = Array.from({ length: 10 }, (_, i) =>
+    `2026-11-${String(i + 13).padStart(2, "0")}`
+  );
 
-  const dates = [
-    ...new Set(scheduledScreenings.map((screening) => screening.date)),
-  ].sort();
+  const START_HOUR = 10;
+  const END_HOUR = 24;
+  const HOUR_HEIGHT = 60;
 
-  calendar.innerHTML = dates
-    .map((date) => {
-      const dayScreenings = scheduledScreenings
-        .filter((screening) => screening.date === date)
-        .sort((a, b) => a.start.localeCompare(b.start));
+  const hours = Array.from(
+    { length: END_HOUR - START_HOUR },
+    (_, i) => START_HOUR + i
+  );
+
+  const timeLabels = hours.map(hour => `
+    <div class="qc-time-label">
+      ${formatTime(`${String(hour).padStart(2, "0")}:00`)}
+    </div>
+  `).join("");
+
+  const dayColumns = dates.map(date => {
+    const dayScreenings = scheduledScreenings
+      .filter(s => s.date === date)
+      .sort((a, b) => a.start.localeCompare(b.start));
+
+    const blocks = dayScreenings.map(screening => {
+      const movie = getMovie(screening.movieId);
+      if (!movie) return "";
+
+      const [hour, minute] = screening.start.split(":").map(Number);
+
+      const top = ((hour - START_HOUR) * 60) + minute;
+      const runtime = Number(screening.runtime || movie.runtime || 90);
+
+      if (top < 0 || top >= (END_HOUR - START_HOUR) * 60) return "";
+
+      const height = Math.max(30, Math.min(
+        runtime,
+        (END_HOUR - START_HOUR) * 60 - top
+      ));
+
+      const title = screening.program || movie.title;
 
       return `
-            <section class="calendar-day">
-                <header>
-                    <strong>${escapeHtml(formatDate(date))}</strong>
+        <article
+          class="qc-timeline-film"
+          style="
+            top:${top}px;
+            height:${height}px;
+            --film-color:${escapeHtml(movie.color || "#777")};
+          "
+          title="${escapeHtml(title)} | ${escapeHtml(screening.cinema)}"
+        >
+          <strong>${escapeHtml(title)}</strong>
+          <small>${escapeHtml(screening.cinema)}</small>
+          <small>
+            ${formatTime(screening.start)} – 
+            ${endTime(screening.start, runtime)}
+          </small>
+        </article>
+      `;
+    }).join("");
 
-                    <span>
-                        ${dayScreenings.length}
-                        screening${dayScreenings.length === 1 ? "" : "s"}
-                    </span>
-                </header>
+    return `
+      <div class="qc-day-column">
+        <header class="qc-day-header">
+          <strong>${Number(date.slice(-2))}</strong>
+          <small>${new Date(date + "T12:00:00")
+            .toLocaleDateString("en-US", { weekday: "short" })}</small>
+          <span>${dayScreenings.length} screening${dayScreenings.length === 1 ? "" : "s"}</span>
+        </header>
 
-                <div class="calendar-day-films">
-                    ${dayScreenings
-                      .map((screening) => {
-                        const movie = getMovie(screening.movieId);
+        <div class="qc-day-track">
+          ${blocks}
+        </div>
+      </div>
+    `;
+  }).join("");
 
-                        if (!movie) return "";
+  calendar.innerHTML = `
+    <div class="qc-timeline-scroll">
+      <div class="qc-timeline-grid">
 
-                        const conflict = hasConflict(screening, screening.id);
+        <div class="qc-time-axis">
+          <div class="qc-time-axis-header">TIME</div>
+          <div class="qc-time-labels">
+            ${timeLabels}
+          </div>
+        </div>
 
-                        return `
-                            <article
-                                class="calendar-film"
-                                style="--program-color:${escapeHtml(movie.color || "#777")}"
-                            >
-                                <time>
-                                    ${escapeHtml(formatTime(screening.start))}
-                                </time>
+        ${dayColumns}
 
-                                <div>
-                                    <strong>
-    ${escapeHtml(screening.program || movie.title)}
-</strong>
-
-                                    <small>
-                                        ${escapeHtml(screening.cinema)}
-                                        · Ends
-                                        ${escapeHtml(
-                                          endTime(
-                                            screening.start,
-                                            screening.runtime,
-                                          ),
-                                        )}
-                                    </small>
-
-                                    ${
-                                      conflict
-                                        ? `
-                                        <small class="conflict-warning">
-                                            ⚠ Possible scheduling conflict
-                                        </small>
-                                    `
-                                        : ""
-                                    }
-                                </div>
-                            </article>
-                        `;
-                      })
-                      .join("")}
-                </div>
-            </section>
-        `;
-    })
-    .join("");
+      </div>
+    </div>
+  `;
 }
+
 
 
 /* =========================================
@@ -2970,65 +3064,83 @@ function clearSchedule() {
 ========================================= */
 
 
+
+
 async function saveCalendarAsImage() {
   if (!scheduledScreenings.length) {
-    alert("Add at least one screening to your schedule first.");
+    alert("Add at least one screening first.");
     return;
   }
 
-  if (typeof html2canvas !== "function") {
-    alert("Unable to load the image export feature. Please try again.");
+  if (typeof window.html2canvas !== "function") {
+    alert("Image export library is not loaded. Please check your HTML script.");
     return;
   }
 
-  if (!calendar || !exportAllCalendarBtn) return;
-
-  const button = exportAllCalendarBtn;
-  const originalText = button.textContent;
-
-  button.disabled = true;
-  button.textContent = "Preparing image...";
+  const button = document.getElementById("exportAllCalendarBtn");
+  const originalText = button?.textContent || "Export All";
 
   try {
-    const canvas = await html2canvas(calendar, {
-      backgroundColor: "#f4f4f0",
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Preparing image...";
+    }
+
+    const target = document.querySelector(".qc-timeline-grid");
+
+    if (!target) {
+      throw new Error("Timeline calendar not found.");
+    }
+
+    const width = target.scrollWidth;
+    const height = target.scrollHeight;
+
+    const canvas = await window.html2canvas(target, {
+      backgroundColor: "#0b1025",
       scale: 2,
       useCORS: true,
-      logging: false
+      logging: true,
+      width: width,
+      height: height,
+      windowWidth: width,
+      windowHeight: height,
+      scrollX: 0,
+      scrollY: 0
     });
 
-    canvas.toBlob((blob) => {
-      if (!blob) {
-        alert("Unable to generate the calendar image.");
-        button.disabled = false;
-        button.textContent = originalText;
-        return;
-      }
+    const blob = await new Promise(resolve => {
+      canvas.toBlob(resolve, "image/png");
+    });
 
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
+    if (!blob) {
+      throw new Error("Could not generate PNG file.");
+    }
 
-      link.href = url;
-      link.download = "qcinema-2026-my-schedule.png";
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
 
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+    link.href = url;
+    link.download = "qcinema-2026-my-schedule.png";
 
-      setTimeout(() => URL.revokeObjectURL(url), 30000);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 
-      button.disabled = false;
-      button.textContent = originalText;
-    }, "image/png");
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
 
   } catch (error) {
-    console.error("Calendar image export failed:", error);
-    alert("Unable to save the calendar image. Please try again.");
+    console.error("IMAGE EXPORT ERROR:", error);
+    alert("Image export failed: " + error.message);
 
-    button.disabled = false;
-    button.textContent = originalText;
+  } finally {
+    if (button) {
+      button.disabled = false;
+      button.textContent = originalText;
+    }
   }
 }
+
+
 
 
 /* =========================================
