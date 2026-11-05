@@ -4,6 +4,9 @@ const SCREENINGS_PER_PAGE = 4;
 let currentScreeningsPage = 1;
 const SHORTS_SET_RUNTIME = 95;
 
+
+
+
 const MOVIE_DETAILS = {
   1: {
     poster: "poster/9-temples.jpg",
@@ -355,1193 +358,726 @@ const SHORTS_PROGRAM_COLORS = {
   "Program 4: The Mountains Always Asks For More": "#408D78",
 };
 
+
 const filmRows = [
-  // [id, category, title, director, notes, runtime, screenings, free, withTalkback]
-  // Screening: [mall, cinema, date, time]. Cinema is blank if not specified in the source.
   [
-    1,
-    "Asian Next Wave",
-    "9 Temples to Heaven",
-    "Sompot Chidgasornpongse",
-    "",
-    140,
+    1, "Asian Next Wave", "9 Temples to Heaven", "Sompot Chidgasornpongse", "", 140,
     [
       ["Gateway", "C11", "2026-11-15", "18:10"],
       ["Gateway", "C12", "2026-11-18", "12:30"],
       ["SM Fairview", "C2", "2026-11-19", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    2,
-    "Asian Next Wave",
-    "A Girl Unknown",
-    "Zou Jing",
-    "",
-    125,
+    2, "Asian Next Wave", "A Girl Unknown", "Zou Jing", "", 125,
     [
       ["Gateway", "", "2026-11-17", "15:30"],
       ["Fisher Mall", "", "2026-11-19", "10:00"],
       ["Gateway", "", "2026-11-22", "20:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    3,
-    "Asian Next Wave",
-    "Ella Archangel: Awit ng Pangil at Kuko",
-    "Mervin Malonzo",
-    "",
-    90,
+    3, "Asian Next Wave", "Ella Archangel: Awit ng Pangil at Kuko", "Mervin Malonzo", "", 90,
     [
       ["TriNoma", "", "2026-11-19", "20:00"],
       ["Gateway", "", "2026-11-22", "18:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    4,
-    "Asian Next Wave",
-    "Hearing",
-    "Lê Bảo",
-    "",
-    128,
+    4, "Asian Next Wave", "Hearing", "Lê Bảo", "", 128,
     [
       ["TriNoma", "", "2026-11-15", "15:30"],
       ["TriNoma", "", "2026-11-20", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    5,
-    "Asian Next Wave",
-    "Fujiko",
-    "Taichi Kimura",
-    "",
-    95,
+    5, "Asian Next Wave", "Fujiko", "Taichi Kimura", "", 95,
     [
       ["Gateway", "", "2026-11-13", "21:00"],
       ["Galleria", "", "2026-11-15", "16:00"],
       ["Fisher Mall", "", "2026-11-17", "21:00"],
       ["Gateway", "", "2026-11-19", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    6,
-    "Asian Next Wave",
-    "Fruit Gathering",
-    "Aung Phyoe",
-    "",
-    97,
+    6, "Asian Next Wave", "Fruit Gathering", "Aung Phyoe", "", 97,
     [
       ["Gateway", "", "2026-11-16", "20:00"],
       ["TriNoma", "", "2026-11-19", "21:00"],
       ["Fisher Mall", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    7,
-    "Asian Next Wave",
-    "The Burning Giants",
-    "Phuttiphong Aroonpheng",
-    "",
-    114,
+    7, "Asian Next Wave", "The Burning Giants", "Phuttiphong Aroonpheng", "", 114,
     [
       ["Gateway", "", "2026-11-13", "18:00"],
       ["Galleria", "", "2026-11-18", "17:30"],
       ["TriNoma", "", "2026-11-19", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    8,
-    "Asian Next Wave",
-    "The World Before",
-    "Yoon Da-bi",
-    "",
-    115,
+    8, "Asian Next Wave", "The World Before", "Yoon Da-bi", "", 115,
     [
       ["Galleria", "", "2026-11-13", "16:00"],
       ["Galleria", "", "2026-11-15", "17:30"],
       ["TriNoma", "", "2026-11-17", "13:30"],
       ["SM Fairview", "", "2026-11-17", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    9,
-    "New Horizons",
-    "Angh",
-    "Theja Rio",
-    "",
-    104,
+    9, "New Horizons", "Angh", "Theja Rio", "", 104,
     [
       ["Gateway", "", "2026-11-17", "11:30"],
       ["Gateway", "", "2026-11-21", "17:30"],
       ["Gateway", "", "2026-11-21", "20:00"],
       ["Fisher Mall", "", "2026-11-22", "20:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    10,
-    "New Horizons",
-    "Baby Jackfruit Baby Guava",
-    "Nông Nhật Quang",
-    "",
-    105,
+    10, "New Horizons", "Baby Jackfruit Baby Guava", "Nông Nhật Quang", "", 105,
     [
       ["TriNoma", "", "2026-11-17", "17:30"],
       ["Fisher Mall", "", "2026-11-18", "11:30"],
       ["TriNoma", "", "2026-11-22", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    13,
-    "New Horizons",
-    "House of the Wind",
-    "Auguste Kouemo Yanghu",
-    "",
-    102,
+    13, "New Horizons", "House of the Wind", "Auguste Kouemo Yanghu", "", 102,
     [
       ["Galleria", "", "2026-11-13", "14:00"],
       ["Fisher Mall", "", "2026-11-15", "16:00"],
       ["Galleria", "", "2026-11-17", "19:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    11,
-    "New Horizons",
-    "Furies",
-    "Rami Kodeih",
-    "",
-    133,
+    11, "New Horizons", "Furies", "Rami Kodeih", "", 133,
     [
       ["Fisher Mall", "", "2026-11-14", "17:30"],
       ["Fisher Mall", "", "2026-11-16", "13:30"],
       ["TriNoma", "", "2026-11-16", "20:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    12,
-    "New Horizons",
-    "La Gradiva",
-    "Marine Atlan",
-    "",
-    145,
+    12, "New Horizons", "La Gradiva", "Marine Atlan", "", 145,
     [
       ["Fisher Mall", "", "2026-11-15", "17:30"],
       ["Fisher Mall", "", "2026-11-18", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    14,
-    "New Horizons",
-    "Sad Girlz",
-    "Fernanda Tovar",
-    "",
-    90,
+    14, "New Horizons", "Sad Girlz", "Fernanda Tovar", "", 90,
     [
       ["SM Fairview", "", "2026-11-13", "11:30"],
       ["Galleria", "", "2026-11-13", "18:00"],
       ["Galleria", "", "2026-11-16", "11:30"],
       ["Fisher Mall", "", "2026-11-22", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    15,
-    "New Horizons",
-    "The Color of the Sun",
-    "Xavier Tera",
-    "",
-    111,
+    15, "New Horizons", "The Color of the Sun", "Xavier Tera", "", 111,
     [
       ["Gateway", "", "2026-11-14", "15:30"],
       ["SM Fairview", "", "2026-11-15", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    16,
-    "New Horizons",
-    "We Are Aliens",
-    "Kohei Kadowaki",
-    "",
-    117,
+    16, "New Horizons", "We Are Aliens", "Kohei Kadowaki", "", 117,
     [
       ["Fisher Mall", "", "2026-11-13", "18:00"],
       ["Galleria", "", "2026-11-17", "18:00"],
       ["TriNoma", "", "2026-11-17", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    17,
-    "RainbowQC",
-    "Big Little Things",
-    "Michelle Zhou",
-    "",
-    109,
+    17, "RainbowQC", "Big Little Things", "Michelle Zhou", "", 109,
     [
       ["Fisher Mall", "", "2026-11-19", "18:00"],
       ["SM Fairview", "", "2026-11-19", "20:00"],
       ["Galleria", "", "2026-11-21", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    18,
-    "RainbowQC",
-    "Flesh and Fuel",
-    "Pierre Le Gall",
-    "",
-    91,
+    18, "RainbowQC", "Flesh and Fuel", "Pierre Le Gall", "", 91,
     [
       ["Gateway", "", "2026-11-14", "14:00"],
       ["Gateway", "", "2026-11-16", "10:00"],
       ["Fisher Mall", "", "2026-11-18", "14:00"],
       ["Galleria", "", "2026-11-19", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
-  [82, "RainbowQC", "Gugu's World", "Allan Deberton", "", 93, [], "", ""],
   [
-    19,
-    "RainbowQC",
-    "I Rarely Wake Up Dreaming",
-    "Isabelle Stever",
-    "",
-    100,
+    82, "RainbowQC", "Gugu's World", "Allan Deberton", "", 93,
+    [],
+    "", ""
+  ],
+  [
+    19, "RainbowQC", "I Rarely Wake Up Dreaming", "Isabelle Stever", "", 100,
     [
       ["TriNoma", "", "2026-11-16", "12:00"],
       ["SM Fairview", "", "2026-11-20", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    20,
-    "RainbowQC",
-    "Jim Queen",
-    "Marco Nguyen & Nicolas Athané",
-    "",
-    85,
+    20, "RainbowQC", "Jim Queen", "Marco Nguyen & Nicolas Athané", "", 85,
     [
       ["Galleria", "", "2026-11-20", "13:30"],
       ["SM Fairview", "", "2026-11-21", "19:30"],
       ["SM Fairview", "", "2026-11-22", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    21,
-    "RainbowQC",
-    "Little Trouble Girls",
-    "Urška Djukić",
-    "",
-    90,
+    21, "RainbowQC", "Little Trouble Girls", "Urška Djukić", "", 90,
     [
       ["Galleria", "", "2026-11-13", "14:00"],
       ["TriNoma", "", "2026-11-15", "10:00"],
       ["Gateway", "", "2026-11-16", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    22,
-    "RainbowQC",
-    "Lovers in the Blue Night",
-    "Anuparna Roy",
-    "",
-    107,
+    22, "RainbowQC", "Lovers in the Blue Night", "Anuparna Roy", "", 107,
     [
       ["TriNoma", "", "2026-11-13", "14:00"],
       ["Gateway", "", "2026-11-17", "10:00"],
       ["TriNoma", "", "2026-11-18", "10:00"],
       ["TriNoma", "", "2026-11-21", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    23,
-    "RainbowQC",
-    "Teenage Sex and Death at Camp Miasma",
-    "Jane Schoenbrun",
-    "",
-    112,
+    23, "RainbowQC", "Teenage Sex and Death at Camp Miasma", "Jane Schoenbrun", "", 112,
     [
       ["Fisher Mall", "", "2026-11-15", "18:00"],
       ["Galleria", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
-  [
-    25,
-    "Before Midnight",
-    "Arrested Memory",
-    "SABU",
-    "",
-    100,
+    [
+    25, "Before Midnight", "Arrested Memory", "SABU", "", 100,
     [
       ["SM Fairview", "", "2026-11-14", "13:30"],
       ["Gateway", "", "2026-11-16", "19:30"],
       ["TriNoma", "", "2026-11-22", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    26,
-    "Before Midnight",
-    "Chronovisor",
-    "Kevin Walker & Jack Auen",
-    "",
-    99,
+    26, "Before Midnight", "Chronovisor", "Kevin Walker & Jack Auen", "", 99,
     [
       ["Galleria", "", "2026-11-15", "19:30"],
       ["SM Fairview", "", "2026-11-19", "13:30"],
       ["Fisher Mall", "", "2026-11-20", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    27,
-    "Before Midnight",
-    "I Love Paris",
-    "Nicky Murphy",
-    "",
-    120,
+    27, "Before Midnight", "I Love Paris", "Nicky Murphy", "", 120,
     [
       ["SM Fairview", "", "2026-11-13", "16:00"],
       ["TriNoma", "", "2026-11-13", "17:30"],
       ["Gateway", "", "2026-11-20", "12:00"],
       ["Gateway", "", "2026-11-21", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    28,
-    "Before Midnight",
-    "Moonglow",
-    "Isabel Sandoval",
-    "",
-    108,
+    28, "Before Midnight", "Moonglow", "Isabel Sandoval", "", 108,
     [
       ["Gateway", "", "2026-11-14", "21:00"],
       ["Gateway", "", "2026-11-21", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    29,
-    "Before Midnight",
-    "The Unknown",
-    "Arthur Harari",
-    "",
-    140,
+    29, "Before Midnight", "The Unknown", "Arthur Harari", "", 140,
     [
       ["Galleria", "", "2026-11-17", "15:30"],
       ["TriNoma", "", "2026-11-20", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    30,
-    "QCSelects",
-    "11",
-    "Bebe Go",
-    "",
-    61,
+    30, "QCSelects", "11", "Bebe Go", "", 61,
     [
       ["Fisher Mall", "", "2026-11-13", "16:00"],
       ["TriNoma", "", "2026-11-17", "20:00"],
       ["TriNoma", "", "2026-11-22", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    79,
-    "QCSelects",
-    "A is for Agustin",
-    "Grace Pimentel Simbulan",
-    "",
-    74,
+    79, "QCSelects", "A is for Agustin", "Grace Pimentel Simbulan", "", 74,
     [],
-    "",
-    "",
+    "", ""
   ],
-  [80, "QCSelects", "Agos, Ang Batang Isla", "Ced Hornedo", "", 10, [], "", ""],
   [
-    31,
-    "QCSelects",
-    "You Are The Film",
-    "Makoto Ueda",
-    "",
-    68,
+    80, "QCSelects", "Agos, Ang Batang Isla", "Ced Hornedo", "", 10,
+    [],
+    "", ""
+  ],
+  [
+    31, "QCSelects", "You Are The Film", "Makoto Ueda", "", 68,
     [
       ["Fisher Mall", "", "2026-11-14", "17:30"],
       ["Gateway", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-20", "17:30"],
       ["TriNoma", "", "2026-11-22", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    32,
-    "QCSelects",
-    "Club Kid",
-    "Jordan Firstman",
-    "",
-    126,
+    32, "QCSelects", "Club Kid", "Jordan Firstman", "", 126,
     [
       ["Fisher Mall", "", "2026-11-14", "19:30"],
       ["Fisher Mall", "", "2026-11-18", "13:30"],
       ["Gateway", "", "2026-11-19", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    33,
-    "QCSelects",
-    "Fucktoys",
-    "Annapurna Sriram",
-    "",
-    106,
+    33, "QCSelects", "Fucktoys", "Annapurna Sriram", "", 106,
     [
       ["TriNoma", "", "2026-11-14", "13:30"],
       ["Gateway", "", "2026-11-18", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    34,
-    "QCSelects",
-    "i grew an inch when my father died",
-    "P.R. Patindol",
-    "",
-    74,
+    34, "QCSelects", "i grew an inch when my father died", "P.R. Patindol", "", 74,
     [
       ["Fisher Mall", "", "2026-11-15", "18:00"],
       ["Gateway", "", "2026-11-16", "11:30"],
       ["Gateway", "", "2026-11-17", "19:30"],
       ["Fisher Mall", "", "2026-11-22", "17:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    35,
-    "QCSelects",
-    "Ibuku",
-    "Eddie Cahyono",
-    "",
-    95,
+    35, "QCSelects", "Ibuku", "Eddie Cahyono", "", 95,
     [
       ["Fisher Mall", "", "2026-11-14", "15:30"],
       ["Gateway", "", "2026-11-16", "11:30"],
       ["TriNoma", "", "2026-11-16", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    36,
-    "QCSelects",
-    "Look Back",
-    "Hirokazu Kore-eda",
-    "",
-    100,
+    36, "QCSelects", "Look Back", "Hirokazu Kore-eda", "", 100,
     [
       ["SM Fairview", "", "2026-11-16", "17:30"],
       ["SM Fairview", "", "2026-11-17", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    37,
-    "QCSelects",
-    "The Remotes",
-    "John Torres",
-    "",
-    153,
+    37, "QCSelects", "The Remotes", "John Torres", "", 153,
     [
       ["Gateway", "", "2026-11-14", "15:30"],
       ["SM Fairview", "", "2026-11-16", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    38,
-    "QCSelects",
-    "The Tigers",
-    "Alberto Rodríguez",
-    "",
-    109,
+    38, "QCSelects", "The Tigers", "Alberto Rodríguez", "", 109,
     [
       ["TriNoma", "", "2026-11-13", "15:30"],
       ["Fisher Mall", "", "2026-11-13", "20:00"],
       ["SM Fairview", "", "2026-11-19", "12:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    39,
-    "Rediscovery",
-    "Amores Perros",
-    "Alejandro González Iñárritu",
-    "",
-    154,
+    39, "Rediscovery", "Amores Perros", "Alejandro González Iñárritu", "", 154,
     [
       ["SM Fairview", "", "2026-11-15", "19:30"],
       ["Fisher Mall", "", "2026-11-16", "14:00"],
       ["Gateway", "", "2026-11-16", "18:00"],
       ["Fisher Mall", "", "2026-11-22", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    40,
-    "Rediscovery",
-    "Batang West Side",
-    "Lav Diaz",
-    "",
-    301,
+    40, "Rediscovery", "Batang West Side", "Lav Diaz", "", 301,
     [
       ["TriNoma", "", "2026-11-13", "21:00"],
       ["Gateway", "", "2026-11-18", "21:00"],
       ["TriNoma", "", "2026-11-21", "16:00"],
       ["Gateway", "", "2026-11-22", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    41,
-    "Rediscovery",
-    "Patay Na Si Hesus",
-    "Victor Villanueva",
-    "",
-    90,
+    41, "Rediscovery", "Patay Na Si Hesus", "Victor Villanueva", "", 90,
     [
       ["TriNoma", "", "2026-11-13", "14:00"],
       ["TriNoma", "", "2026-11-17", "18:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    42,
-    "Rediscovery",
-    "Possession",
-    "Andrzej Żuławski",
-    "",
-    124,
+    42, "Rediscovery", "Possession", "Andrzej Żuławski", "", 124,
     [
       ["TriNoma", "", "2026-11-18", "11:30"],
       ["SM Fairview", "", "2026-11-20", "14:00"],
       ["TriNoma", "", "2026-11-21", "20:00"],
       ["TriNoma", "", "2026-11-22", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    43,
-    "Rediscovery",
-    "Jaguar",
-    "Lino Brocka",
-    "",
-    100,
+    43, "Rediscovery", "Jaguar", "Lino Brocka", "", 100,
     [
       ["Galleria", "", "2026-11-13", "14:00"],
       ["Fisher Mall", "", "2026-11-13", "20:00"],
       ["Galleria", "", "2026-11-17", "20:00"],
       ["Fisher Mall", "", "2026-11-18", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    44,
-    "Rediscovery",
-    "Perfect Blue",
-    "Satoshi Kon",
-    "",
-    81,
+    44, "Rediscovery", "Perfect Blue", "Satoshi Kon", "", 81,
     [
       ["Fisher Mall", "", "2026-11-14", "11:30"],
       ["Gateway", "", "2026-11-16", "21:00"],
       ["Galleria", "", "2026-11-19", "21:00"],
       ["Fisher Mall", "", "2026-11-20", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    45,
-    "Rediscovery",
-    "Sister Stella L.",
-    "Mike de Leon",
-    "",
-    103,
+    45, "Rediscovery", "Sister Stella L.", "Mike de Leon", "", 103,
     [
       ["Gateway", "", "2026-11-18", "19:30"],
       ["Fisher Mall", "", "2026-11-20", "20:00"],
       ["Gateway", "", "2026-11-21", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    46,
-    "Dokyu Days",
-    "Bomba Bernal",
-    "Khavn",
-    "",
-    69,
+    46, "Dokyu Days", "Bomba Bernal", "Khavn", "", 69,
     [
       ["SM Fairview", "", "2026-11-13", "18:00"],
       ["SM Fairview", "", "2026-11-16", "13:30"],
       ["TriNoma", "", "2026-11-16", "15:30"],
       ["TriNoma", "", "2026-11-19", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    47,
-    "Dokyu Days",
-    "I Deserve A Lover Whose Every Rise Sets Fiery Dooms Raging Across the Sky",
-    "Mani Haghighi",
-    "",
-    76,
+    47, "Dokyu Days", "I Deserve A Lover Whose Every Rise Sets Fiery Dooms Raging Across the Sky", "Mani Haghighi", "", 76,
     [
       ["Gateway", "", "2026-11-15", "18:00"],
       ["SM Fairview", "", "2026-11-18", "16:00"],
       ["SM Fairview", "", "2026-11-21", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    48,
-    "Dokyu Days",
-    "To the Moon and Back",
-    "Elisa Gómez Álvarez",
-    "",
-    85,
+    48, "Dokyu Days", "To the Moon and Back", "Elisa Gómez Álvarez", "", 85,
     [
       ["Fisher Mall", "", "2026-11-19", "11:30"],
       ["SM Fairview", "", "2026-11-21", "20:00"],
       ["Galleria", "", "2026-11-22", "20:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    49,
-    "Dokyu Days",
-    "The Illusion of an Everlasting Summer",
-    "Alessandra Sanguinetti",
-    "",
-    94,
+    49, "Dokyu Days", "The Illusion of an Everlasting Summer", "Alessandra Sanguinetti", "", 94,
     [
       ["TriNoma", "", "2026-11-15", "10:00"],
       ["SM Fairview", "", "2026-11-20", "21:00"],
       ["SM Fairview", "", "2026-11-22", "18:00"],
       ["Fisher Mall", "", "2026-11-22", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    50,
-    "Dokyu Days",
-    "Union Town",
-    "Barbara Kopple",
-    "",
-    106,
+    50, "Dokyu Days", "Union Town", "Barbara Kopple", "", 106,
     [
       ["Galleria", "", "2026-11-15", "10:00"],
       ["TriNoma", "", "2026-11-19", "12:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    81,
-    "Dokyu Days",
-    "You Can See Everything",
-    "Nathan Fielder & Lance Oppenheim",
-    "",
-    174,
+    81, "Dokyu Days", "You Can See Everything", "Nathan Fielder & Lance Oppenheim", "", 174,
     [],
-    "",
-    "",
+    "", ""
   ],
-  [
-    51,
-    "QCShorts International",
-    "And if Thuy Didn't Exist",
-    "Carlo Francisco Manatad",
-    "Program 1: Rotten Work",
-    16,
+    [
+    51, "QCShorts International", "And if Thuy Didn't Exist", "Carlo Francisco Manatad", "Program 1: Rotten Work", 16,
     [
       ["Galleria", "", "2026-11-16", "15:30"],
       ["SM Fairview", "", "2026-11-17", "13:30"],
       ["Gateway", "", "2026-11-17", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    52,
-    "QCShorts International",
-    "Body Works",
-    "Maki Makilan",
-    "Program 1: Rotten Work",
-    90,
+    52, "QCShorts International", "Body Works", "Maki Makilan", "Program 1: Rotten Work", 90,
     [
       ["Galleria", "", "2026-11-16", "15:30"],
       ["SM Fairview", "", "2026-11-17", "13:30"],
       ["Gateway", "", "2026-11-17", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    53,
-    "QCShorts International",
-    "Is This Desire?",
-    "Apa Agbayani",
-    "Program 1: Rotten Work",
-    16,
+    53, "QCShorts International", "Is This Desire?", "Apa Agbayani", "Program 1: Rotten Work", 16,
     [
       ["Galleria", "", "2026-11-16", "15:30"],
       ["SM Fairview", "", "2026-11-17", "13:30"],
       ["Gateway", "", "2026-11-17", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    54,
-    "QCShorts International",
-    "She Said",
-    "Ivan Tan",
-    "Program 1: Rotten Work",
-    21,
+    54, "QCShorts International", "She Said", "Ivan Tan", "Program 1: Rotten Work", 21,
     [
       ["Galleria", "", "2026-11-16", "15:30"],
       ["SM Fairview", "", "2026-11-17", "13:30"],
       ["Gateway", "", "2026-11-17", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    55,
-    "QCShorts International",
-    "Through the Cracks",
-    "Lê Hoàng",
-    "Program 1: Rotten Work",
-    14,
+    55, "QCShorts International", "Through the Cracks", "Lê Hoàng", "Program 1: Rotten Work", 14,
     [
       ["Galleria", "", "2026-11-16", "15:30"],
       ["SM Fairview", "", "2026-11-17", "13:30"],
       ["Gateway", "", "2026-11-17", "16:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    56,
-    "QCShorts International",
-    "Bleat!",
-    "Ananth Subramaniam",
-    "Program 2: A Little Blasphemy Never Hurt Anyone",
-    15,
+    56, "QCShorts International", "Bleat!", "Ananth Subramaniam", "Program 2: A Little Blasphemy Never Hurt Anyone", 15,
     [
       ["Galleria", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Galleria", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    57,
-    "QCShorts International",
-    "Fruit",
-    "Jen Nee Lim",
-    "Program 2: A Little Blasphemy Never Hurt Anyone",
-    90,
+    57, "QCShorts International", "Fruit", "Jen Nee Lim", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
     [
       ["Galleria", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Galleria", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    58,
-    "QCShorts International",
-    "Run Shirley Run!",
-    "Rodiell Veloso",
-    "Program 2: A Little Blasphemy Never Hurt Anyone",
-    90,
+    58, "QCShorts International", "Run Shirley Run!", "Rodiell Veloso", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
     [
       ["Galleria", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Galleria", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    59,
-    "QCShorts International",
-    "The Bovine Comedy",
-    "Ratchapoom Boonbunchachoke",
-    "Program 2: A Little Blasphemy Never Hurt Anyone",
-    90,
+    59, "QCShorts International", "The Bovine Comedy", "Ratchapoom Boonbunchachoke", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
     [
       ["Galleria", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Galleria", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    60,
-    "QCShorts International",
-    "The Dream is a Snail",
-    "Thien An Nguyen",
-    "Program 2: A Little Blasphemy Never Hurt Anyone",
-    90,
+    60, "QCShorts International", "The Dream is a Snail", "Thien An Nguyen", "Program 2: A Little Blasphemy Never Hurt Anyone", 90,
     [
       ["Galleria", "", "2026-11-17", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Galleria", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    61,
-    "QCShorts International",
-    "Gandang Lola",
-    "Kylechandler Bigay",
-    "Program 3: All Mothers Were Once Girls",
-    90,
+    61, "QCShorts International", "Gandang Lola", "Kylechandler Bigay", "Program 3: All Mothers Were Once Girls", 90,
     [
       ["Fisher Mall", "", "2026-11-13", "14:00"],
       ["Gateway", "", "2026-11-19", "13:30"],
       ["Galleria", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    62,
-    "QCShorts International",
-    "Maanaa Kanimo",
-    "Toni Cañete",
-    "Program 3: All Mothers Were Once Girls",
-    90,
+    62, "QCShorts International", "Maanaa Kanimo", "Toni Cañete", "Program 3: All Mothers Were Once Girls", 90,
     [
       ["Fisher Mall", "", "2026-11-13", "14:00"],
       ["Gateway", "", "2026-11-19", "13:30"],
       ["Galleria", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    63,
-    "QCShorts International",
-    "Sana’y Nandito Ka",
-    "Clister Santos",
-    "Program 3: All Mothers Were Once Girls",
-    90,
+    63, "QCShorts International", "Sana’y Nandito Ka", "Clister Santos", "Program 3: All Mothers Were Once Girls", 90,
     [
       ["Fisher Mall", "", "2026-11-13", "14:00"],
       ["Gateway", "", "2026-11-19", "13:30"],
       ["Galleria", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    64,
-    "QCShorts International",
-    "The 4Ply Clandestine System",
-    "Natalie Sin",
-    "Program 3: All Mothers Were Once Girls",
-    90,
+    64, "QCShorts International", "The 4Ply Clandestine System", "Natalie Sin", "Program 3: All Mothers Were Once Girls", 90,
     [
       ["Fisher Mall", "", "2026-11-13", "14:00"],
       ["Gateway", "", "2026-11-19", "13:30"],
       ["Galleria", "", "2026-11-22", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    65,
-    "QCShorts International",
-    "Agsangit Laeng Ti Al-alia",
-    "Carla Pulido Ocampo",
-    "Program 4: The Mountains Always Asks For More",
-    90,
+    65, "QCShorts International", "Agsangit Laeng Ti Al-alia", "Carla Pulido Ocampo", "Program 4: The Mountains Always Asks For More", 90,
     [
       ["Fisher Mall", "", "2026-11-14", "13:30"],
       ["Fisher Mall", "", "2026-11-19", "19:30"],
       ["Galleria", "", "2026-11-19", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    66,
-    "QCShorts International",
-    "Golden Island",
-    "Arief Budiman",
-    "Program 4: The Mountains Always Asks For More",
-    90,
+    66, "QCShorts International", "Golden Island", "Arief Budiman", "Program 4: The Mountains Always Asks For More", 90,
     [
       ["Fisher Mall", "", "2026-11-14", "13:30"],
       ["Fisher Mall", "", "2026-11-19", "19:30"],
       ["Galleria", "", "2026-11-19", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    67,
-    "QCShorts International",
-    "Incident on the Mountain",
-    "Savunthara Seng",
-    "Program 4: The Mountains Always Asks For More",
-    90,
+    67, "QCShorts International", "Incident on the Mountain", "Savunthara Seng", "Program 4: The Mountains Always Asks For More", 90,
     [
       ["Fisher Mall", "", "2026-11-14", "13:30"],
       ["Fisher Mall", "", "2026-11-19", "19:30"],
       ["Galleria", "", "2026-11-19", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    68,
-    "QCShorts International",
-    "Obscura",
-    "Timoteus Anggawan Kusno",
-    "Program 4: The Mountains Always Asks For More",
-    90,
+    68, "QCShorts International", "Obscura", "Timoteus Anggawan Kusno", "Program 4: The Mountains Always Asks For More", 90,
     [
       ["Fisher Mall", "", "2026-11-14", "13:30"],
       ["Fisher Mall", "", "2026-11-19", "19:30"],
       ["Galleria", "", "2026-11-19", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    69,
-    "QCShorts International",
-    "They Made Monsters",
-    "Jaime Morados",
-    "Program 4: The Mountains Always Asks For More",
-    90,
+    69, "QCShorts International", "They Made Monsters", "Jaime Morados", "Program 4: The Mountains Always Asks For More", 90,
     [
       ["Fisher Mall", "", "2026-11-14", "13:30"],
       ["Fisher Mall", "", "2026-11-19", "19:30"],
       ["Galleria", "", "2026-11-19", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    70,
-    "Screen International",
-    "A Long Winter",
-    "Andrew Haigh",
-    "",
-    118,
+    70, "Screen International", "A Long Winter", "Andrew Haigh", "", 118,
     [
       ["Galleria", "", "2026-11-17", "15:30"],
       ["Galleria", "", "2026-11-18", "17:30"],
       ["Fisher Mall", "", "2026-11-20", "18:00"],
       ["Galleria", "", "2026-11-20", "19:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    78,
-    "Screen International",
-    "Everytime",
-    "Sandra Wollner",
-    "",
-    123,
+    78, "Screen International", "Everytime", "Sandra Wollner", "", 123,
     [],
-    "",
-    "",
+    "", ""
   ],
   [
-    71,
-    "Screen International",
-    "Fatherland",
-    "Paweł Pawlikowski",
-    "",
-    82,
+    71, "Screen International", "Fatherland", "Paweł Pawlikowski", "", 82,
     [
       ["Galleria", "", "2026-11-13", "21:00"],
       ["Galleria", "", "2026-11-14", "10:00"],
       ["SM Fairview", "", "2026-11-15", "13:30"],
       ["SM Fairview", "", "2026-11-17", "14:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    72,
-    "Screen International",
-    "Fjord",
-    "Cristian Mungiu",
-    "",
-    146,
+    72, "Screen International", "Fjord", "Cristian Mungiu", "", 146,
     [
       ["Gateway", "", "2026-11-15", "13:30"],
       ["Galleria", "", "2026-11-19", "16:00"],
       ["Gateway", "", "2026-11-22", "11:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    73,
-    "Screen International",
-    "Makikiraan Po",
-    "Lav Diaz",
-    "",
-    151,
+    73, "Screen International", "Makikiraan Po", "Lav Diaz", "", 151,
     [
       ["Galleria", "", "2026-11-18", "11:30"],
       ["Galleria", "", "2026-11-19", "10:00"],
       ["Fisher Mall", "", "2026-11-20", "13:30"],
       ["TriNoma", "", "2026-11-21", "21:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    74,
-    "Screen International",
-    "Nowhere to Lay My Eyes",
-    "Hong Sang-soo",
-    "",
-    72,
+    74, "Screen International", "Nowhere to Lay My Eyes", "Hong Sang-soo", "", 72,
     [
       ["Gateway", "", "2026-11-14", "18:00"],
       ["Galleria", "", "2026-11-18", "12:00"],
       ["Fisher Mall", "", "2026-11-21", "10:00"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    75,
-    "Screen International",
-    "The Beloved",
-    "Rodrigo Sorogoyen",
-    "",
-    136,
+    75, "Screen International", "The Beloved", "Rodrigo Sorogoyen", "", 136,
     [
       ["Fisher Mall", "", "2026-11-15", "10:00"],
       ["Galleria", "", "2026-11-19", "18:00"],
       ["TriNoma", "", "2026-11-19", "18:00"],
       ["Fisher Mall", "", "2026-11-20", "13:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    76,
-    "Screen International",
-    "The Diary of A Chambermaid",
-    "Radu Jude",
-    "",
-    94,
+    76, "Screen International", "The Diary of A Chambermaid", "Radu Jude", "", 94,
     [
       ["SM Fairview", "", "2026-11-13", "10:00"],
       ["TriNoma", "", "2026-11-14", "19:30"],
       ["TriNoma", "", "2026-11-19", "10:00"],
       ["Gateway", "", "2026-11-22", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
   [
-    77,
-    "Screen International",
-    "Vintage Violence",
-    "Eugene Kotlyarenko",
-    "",
-    105,
+    77, "Screen International", "Vintage Violence", "Eugene Kotlyarenko", "", 105,
     [
       ["TriNoma", "", "2026-11-13", "19:30"],
       ["Gateway", "", "2026-11-19", "13:30"],
       ["TriNoma", "", "2026-11-19", "19:30"],
       ["TriNoma", "", "2026-11-21", "15:30"],
     ],
-    "",
-    "",
+    "", ""
   ],
 ];
 
@@ -1659,6 +1195,7 @@ function save() {
   }
 }
 
+
 const syncCalendarBtn = document.getElementById("syncCalendarBtn");
 const exportAllCalendarBtn = document.getElementById("exportAllCalendarBtn");
 
@@ -1681,12 +1218,14 @@ if (syncCalendarBtn) {
       return;
     }
 
-    const events = screenings.map((screening) => {
+    const events = screenings.map(screening => {
       const movie = getMovie(screening.movieId);
 
       if (!movie) return "";
 
-      const runtime = Number(screening.runtime || movie.runtime || 90);
+      const runtime = Number(
+        screening.runtime || movie.runtime || 90
+      );
 
       const [hour, minute] = screening.start.split(":").map(Number);
 
@@ -1696,8 +1235,7 @@ if (syncCalendarBtn) {
       const endMinute = totalMinutes % 60;
 
       const endTime24 =
-        String(endHour).padStart(2, "0") +
-        ":" +
+        String(endHour).padStart(2, "0") + ":" +
         String(endMinute).padStart(2, "0");
 
       return createICSEvent({
@@ -1706,13 +1244,14 @@ if (syncCalendarBtn) {
         startTime: screening.start,
         endTime: endTime24,
         location: screening.cinema,
-        description: "QCinema 2026 Film Screening",
+        description: "QCinema 2026 Film Screening"
       });
     });
 
     downloadICS(events, "qcinema-2026-calendar.ics");
   });
 }
+
 
 /* =========================================
    GENERAL HELPERS
@@ -2164,7 +1703,11 @@ function renderMovies() {
 
     moviesGrid.innerHTML = `
     <div class="empty-state">
-      ${hasPrograms && !activeProgram ? "" : ""}
+      ${
+        hasPrograms && !activeProgram
+          ? ""
+          : ""
+      }
     </div>
   `;
     return;
@@ -2311,10 +1854,12 @@ function renderMovies() {
   });
 }
 
+
 const programDropdown = document.getElementById("programDropdown");
 
 let activeProgram = null;
 let openProgramCategory = null;
+
 
 function showProgramDropdown(category) {
   if (!programDropdown) return;
@@ -2322,9 +1867,11 @@ function showProgramDropdown(category) {
   const programs = [
     ...new Set(
       movies
-        .filter((movie) => movie.category === category && movie.program)
-        .map((movie) => String(movie.program).trim()),
-    ),
+        .filter(movie =>
+          movie.category === category && movie.program
+        )
+        .map(movie => String(movie.program).trim())
+    )
   ];
 
   // Close the dropdown if the same category is clicked again.
@@ -2351,15 +1898,13 @@ function showProgramDropdown(category) {
   }
 
   // Build the dropdown menu.
-  programDropdown.innerHTML = programs
-    .map((program) => {
-      const count = movies.filter(
-        (movie) =>
-          movie.category === category &&
-          String(movie.program || "").trim() === program,
-      ).length;
+  programDropdown.innerHTML = programs.map(program => {
+    const count = movies.filter(movie =>
+      movie.category === category &&
+      String(movie.program || "").trim() === program
+    ).length;
 
-      return `
+    return `
       <button
         type="button"
         data-program="${escapeHtml(program)}"
@@ -2368,13 +1913,12 @@ function showProgramDropdown(category) {
         <span class="program-count">${count}</span>
       </button>
     `;
-    })
-    .join("");
+  }).join("");
 
   // Find the exact category button that was clicked.
-  const categoryButton = [...document.querySelectorAll("[data-category]")].find(
-    (button) => button.dataset.category === category,
-  );
+  const categoryButton = [
+    ...document.querySelectorAll("[data-category]")
+  ].find(button => button.dataset.category === category);
 
   if (categoryButton) {
     // Position the dropdown relative to the category button.
@@ -2390,7 +1934,8 @@ function showProgramDropdown(category) {
       const margin = 8;
 
       if (menuRect.right > window.innerWidth - margin) {
-        programDropdown.style.left = `${Math.max(margin, window.innerWidth - menuRect.width - margin)}px`;
+        programDropdown.style.left =
+          `${Math.max(margin, window.innerWidth - menuRect.width - margin)}px`;
       }
 
       if (menuRect.left < margin) {
@@ -2405,8 +1950,9 @@ function showProgramDropdown(category) {
   renderMovies();
 }
 
+
 // Use event delegation for category and program clicks.
-document.addEventListener("click", (event) => {
+document.addEventListener("click", event => {
   const categoryButton = event.target.closest("[data-category]");
 
   if (categoryButton) {
@@ -2419,21 +1965,25 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  const programButton = event.target.closest("#programDropdown [data-program]");
+  const programButton = event.target.closest(
+    "#programDropdown [data-program]"
+  );
 
   if (programButton) {
     activeProgram = programButton.dataset.program;
 
-    programDropdown.querySelectorAll("[data-program]").forEach((button) => {
-      button.classList.toggle("active", button === programButton);
-    });
+    programDropdown.querySelectorAll("[data-program]")
+      .forEach(button => {
+        button.classList.toggle("active", button === programButton);
+      });
 
     renderMovies();
   }
 });
 
+
 /* Close the program dropdown when clicking outside */
-document.addEventListener("click", (event) => {
+document.addEventListener("click", event => {
   if (!programDropdown || !programDropdown.classList.contains("visible")) {
     return;
   }
@@ -2464,13 +2014,13 @@ function cancelDropdownClose() {
 programDropdown.addEventListener("mouseenter", cancelDropdownClose);
 programDropdown.addEventListener("mouseleave", scheduleDropdownClose);
 
-document.querySelectorAll("[data-category]").forEach((button) => {
+document.querySelectorAll("[data-category]").forEach(button => {
   button.addEventListener("mouseenter", cancelDropdownClose);
   button.addEventListener("mouseleave", scheduleDropdownClose);
 });
 
 /* Close immediately after selecting a program */
-programDropdown.addEventListener("click", (event) => {
+programDropdown.addEventListener("click", event => {
   const programButton = event.target.closest("[data-program]");
   if (!programButton) return;
 
@@ -2479,6 +2029,8 @@ programDropdown.addEventListener("click", (event) => {
   programDropdown.classList.remove("visible");
   openProgramCategory = null;
 });
+
+
 
 /* =========================================
    PROGRAM LEGEND
@@ -2893,12 +2445,12 @@ function renderScreenings() {
    CALENDAR
 ========================================= */
 
+
 function renderCalendar() {
   if (!calendar) return;
 
-  const dates = Array.from(
-    { length: 10 },
-    (_, i) => `2026-11-${String(i + 13).padStart(2, "0")}`,
+  const dates = Array.from({ length: 10 }, (_, i) =>
+    `2026-11-${String(i + 13).padStart(2, "0")}`
   );
 
   const START_HOUR = 10;
@@ -2907,45 +2459,39 @@ function renderCalendar() {
 
   const hours = Array.from(
     { length: END_HOUR - START_HOUR },
-    (_, i) => START_HOUR + i,
+    (_, i) => START_HOUR + i
   );
 
-  const timeLabels = hours
-    .map(
-      (hour) => `
+  const timeLabels = hours.map(hour => `
     <div class="qc-time-label">
       ${formatTime(`${String(hour).padStart(2, "0")}:00`)}
     </div>
-  `,
-    )
-    .join("");
+  `).join("");
 
-  const dayColumns = dates
-    .map((date) => {
-      const dayScreenings = scheduledScreenings
-        .filter((s) => s.date === date)
-        .sort((a, b) => a.start.localeCompare(b.start));
+  const dayColumns = dates.map(date => {
+    const dayScreenings = scheduledScreenings
+      .filter(s => s.date === date)
+      .sort((a, b) => a.start.localeCompare(b.start));
 
-      const blocks = dayScreenings
-        .map((screening) => {
-          const movie = getMovie(screening.movieId);
-          if (!movie) return "";
+    const blocks = dayScreenings.map(screening => {
+      const movie = getMovie(screening.movieId);
+      if (!movie) return "";
 
-          const [hour, minute] = screening.start.split(":").map(Number);
+      const [hour, minute] = screening.start.split(":").map(Number);
 
-          const top = (hour - START_HOUR) * 60 + minute;
-          const runtime = Number(screening.runtime || movie.runtime || 90);
+      const top = ((hour - START_HOUR) * 60) + minute;
+      const runtime = Number(screening.runtime || movie.runtime || 90);
 
-          if (top < 0 || top >= (END_HOUR - START_HOUR) * 60) return "";
+      if (top < 0 || top >= (END_HOUR - START_HOUR) * 60) return "";
 
-          const height = Math.max(
-            30,
-            Math.min(runtime, (END_HOUR - START_HOUR) * 60 - top),
-          );
+      const height = Math.max(30, Math.min(
+        runtime,
+        (END_HOUR - START_HOUR) * 60 - top
+      ));
 
-          const title = screening.program || movie.title;
+      const title = screening.program || movie.title;
 
-          return `
+      return `
         <article
           class="qc-timeline-film"
           style="
@@ -2963,16 +2509,14 @@ function renderCalendar() {
           </small>
         </article>
       `;
-        })
-        .join("");
+    }).join("");
 
-      return `
+    return `
       <div class="qc-day-column">
         <header class="qc-day-header">
           <strong>${Number(date.slice(-2))}</strong>
-          <small>${new Date(date + "T12:00:00").toLocaleDateString("en-US", {
-            weekday: "short",
-          })}</small>
+          <small>${new Date(date + "T12:00:00")
+            .toLocaleDateString("en-US", { weekday: "short" })}</small>
           <span>${dayScreenings.length} screening${dayScreenings.length === 1 ? "" : "s"}</span>
         </header>
 
@@ -2981,8 +2525,7 @@ function renderCalendar() {
         </div>
       </div>
     `;
-    })
-    .join("");
+  }).join("");
 
   calendar.innerHTML = `
     <div class="qc-timeline-scroll">
@@ -3001,6 +2544,8 @@ function renderCalendar() {
     </div>
   `;
 }
+
+
 
 /* =========================================
    QCINEMA 2026 — ADD TO CALENDAR
@@ -3033,21 +2578,17 @@ function createICSEvent({
   startTime,
   endTime,
   location = "QCinema 2026",
-  description = "Added using the QCinema 2026 Scheduler.",
+  description = "Added using the QCinema 2026 Scheduler."
 }) {
   if (!title || !date || !startTime || !endTime) {
     console.warn("Skipping event: missing title, date, or time.", {
-      title,
-      date,
-      startTime,
-      endTime,
+      title, date, startTime, endTime
     });
     return "";
   }
 
   const now = new Date();
-  const stamp = now
-    .toISOString()
+  const stamp = now.toISOString()
     .replace(/[-:]/g, "")
     .replace(/\.\d{3}/, "");
 
@@ -3063,7 +2604,7 @@ function createICSEvent({
     const nextDate = [
       nextDay.getFullYear(),
       String(nextDay.getMonth() + 1).padStart(2, "0"),
-      String(nextDay.getDate()).padStart(2, "0"),
+      String(nextDay.getDate()).padStart(2, "0")
     ].join("-");
 
     end = toICSDateTime(nextDate, endTime);
@@ -3078,7 +2619,7 @@ function createICSEvent({
     `SUMMARY:${escapeICS(title)}`,
     `LOCATION:${escapeICS(location)}`,
     `DESCRIPTION:${escapeICS(description)}`,
-    "END:VEVENT",
+    "END:VEVENT"
   ].join("\r\n");
 }
 
@@ -3098,11 +2639,11 @@ function downloadICS(events, filename = "qcinema-2026-schedule.ics") {
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     ...validEvents,
-    "END:VCALENDAR",
+    "END:VCALENDAR"
   ].join("\r\n");
 
   const blob = new Blob([calendarContent], {
-    type: "text/calendar;charset=utf-8",
+    type: "text/calendar;charset=utf-8"
   });
 
   const url = URL.createObjectURL(blob);
@@ -3126,6 +2667,7 @@ function addScreeningToCalendar(screening) {
   }
 }
 
+
 function exportAllScreeningsToCalendar(screenings) {
   const events = screenings.map((screening) => {
     const movie = getMovie(screening.movieId);
@@ -3145,8 +2687,7 @@ function exportAllScreeningsToCalendar(screenings) {
     const endMinutes = totalMinutes % 60;
 
     const endTime =
-      String(endHours).padStart(2, "0") +
-      ":" +
+      String(endHours).padStart(2, "0") + ":" +
       String(endMinutes).padStart(2, "0");
 
     return createICSEvent({
@@ -3155,12 +2696,14 @@ function exportAllScreeningsToCalendar(screenings) {
       startTime: startTime,
       endTime: endTime,
       location: screening.cinema,
-      description: "QCinema 2026 Film Screening",
+      description: "QCinema 2026 Film Screening"
     });
   });
 
   downloadICS(events, "qcinema-2026-all-screenings.ics");
 }
+
+
 
 /* =========================================
    CLEAR SCHEDULE
@@ -3186,6 +2729,9 @@ function clearSchedule() {
 /* =========================================
    EXPORT CALENDAR AS IMAGE
 ========================================= */
+
+
+
 
 async function saveCalendarAsImage() {
   if (!scheduledScreenings.length) {
@@ -3226,10 +2772,10 @@ async function saveCalendarAsImage() {
       windowWidth: width,
       windowHeight: height,
       scrollX: 0,
-      scrollY: 0,
+      scrollY: 0
     });
 
-    const blob = await new Promise((resolve) => {
+    const blob = await new Promise(resolve => {
       canvas.toBlob(resolve, "image/png");
     });
 
@@ -3248,9 +2794,11 @@ async function saveCalendarAsImage() {
     link.remove();
 
     setTimeout(() => URL.revokeObjectURL(url), 30000);
+
   } catch (error) {
     console.error("IMAGE EXPORT ERROR:", error);
     alert("Image export failed: " + error.message);
+
   } finally {
     if (button) {
       button.disabled = false;
@@ -3258,6 +2806,9 @@ async function saveCalendarAsImage() {
     }
   }
 }
+
+
+
 
 /* =========================================
    INITIALIZATION
