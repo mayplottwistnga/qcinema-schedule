@@ -370,7 +370,7 @@ const filmRows = [
     2, "Asian Next Wave", "A Girl Unknown", "Zou Jing", "", 125,
     [
       ["Gateway", "C11", "2026-11-16", "15:00"],
-      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-18", "15:15"],
+      ["Trinoma", "C3", "2026-11-18", "15:15"],
       ["Fisher Mall", "C3", "2026-11-21", "18:00"],
     ],
     "", ""
@@ -380,7 +380,7 @@ const filmRows = [
     [
       ["Quezon City M.I.C.E Center", "", "2026-11-13", "19:00"],
       ["Gateway", "C5", "2026-11-14", "15:30"],
-      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-17", "17:30"],
+      ["Trinoma", "C3", "2026-11-17", "17:30"],
       ["Gateway", "C17", "2026-11-20", "13:00"],
     ],
     "", ""
@@ -436,7 +436,7 @@ const filmRows = [
     9, "New Horizons", "Angh", "Theja Rio", "", 104,
     [
       ["Gateway", "C16", "2026-11-14", "15:00"],
-      ["TriNoma", "C3", "2026-11-17", "15:10"],
+      ["Trinoma", "C3", "2026-11-17", "15:10"],
       ["SM Fairview", "C2", "2026-11-20", "15:30"],
     ],
     "", ""
@@ -472,7 +472,7 @@ const filmRows = [
     12, "New Horizons", "La Gradiva", "Marine Atlan", "", 145,
     [
       ["Gateway", "C11", "2026-11-15", "12:30"],
-      ["TriNoma", "C3", "2026-11-16", "13:00"],
+      ["Trinoma", "C3", "2026-11-16", "13:00"],
       ["Gateway", "C16", "2026-11-21", "18:40"],
     ],
     "", ""
@@ -481,7 +481,7 @@ const filmRows = [
     14, "New Horizons", "Sad Girlz", "Fernanda Tovar", "", 90,
     [
       ["Gateway", "C16", "2026-11-16", "13:00"],
-      ["TriNoma", "C3", "2026-11-18", "20:30"],
+      ["Trinoma", "C3", "2026-11-18", "20:30"],
       ["SM Fairview", "C2", "2026-11-21", "12:45"],
     ],
     "", ""
@@ -499,7 +499,7 @@ const filmRows = [
     16, "New Horizons", "We Are Aliens", "Kohei Kadowaki", "", 117,
     [
       ["Gateway", "C16", "2026-11-17", "12:30"],
-      ["TriNoma", "C3", "2026-11-18", "18:00"],
+      ["Trinoma", "C3", "2026-11-18", "18:00"],
       ["SM Fairview", "C2", "2026-11-20", "17:45"],
     ],
     "", ""
@@ -573,7 +573,7 @@ const filmRows = [
     23, "RainbowQC", "Teenage Sex and Death at Camp Miasma", "Jane Schoenbrun", "", 112,
     [
       ["Gateway", "C16", "2026-11-14", "19:20"],
-      ["TriNoma", "C3", "2026-11-17", "12:45"],
+      ["Trinoma", "C3", "2026-11-17", "12:45"],
       ["Gateway", "C12", "2026-11-21", "18:15"],
     ],
     "", ""
@@ -583,7 +583,7 @@ const filmRows = [
   [
     25, "Before Midnight", "Arrested Memory", "SABU", "", 100,
     [
-      ["TriNoma", "C3", "2026-11-17", "20:00"],
+      ["Trinoma", "C3", "2026-11-17", "20:00"],
       ["Gateway", "C16", "2026-11-18", "21:30"],
     ],
     "", ""
@@ -591,7 +591,7 @@ const filmRows = [
   [
     26, "Before Midnight", "Chronovisor", "Kevin Walker & Jack Auen", "", 99,
     [
-      ["Ayala Malls Cinemas Trinoma", "C3", "2026-11-16", "20:45"],
+      ["Trinoma", "C3", "2026-11-16", "20:45"],
       ["Gateway", "C17", "2026-11-21", "15:00"],
     ],
     "", ""
@@ -850,7 +850,7 @@ const filmRows = [
   [
     70, "Screen International", "A Long Winter", "", "", 118,
     [
-      ["TriNoma", "C3", "2026-11-16", "16:00"],
+      ["Trinoma", "C3", "2026-11-16", "16:00"],
       ["Galleria", "C3", "2026-11-17", "21:20"],
       ["Gateway", "C12", "2026-11-21", "12:45"],
     ],
@@ -922,7 +922,7 @@ const filmRows = [
     77, "Screen International", "Vintage Violence", "", "", 105,
     [
       ["Gateway", "C12", "2026-11-14", "15:35"],
-      ["TriNoma", "C3", "2026-11-16", "18:30"],
+      ["Trinoma", "C3", "2026-11-16", "18:30"],
       ["Gateway", "C12", "2026-11-19", "21:00"],
     ],
     "", ""
