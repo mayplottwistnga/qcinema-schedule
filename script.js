@@ -592,7 +592,7 @@ const filmRows = [
     26, "Before Midnight", "Chronovisor", "Kevin Walker & Jack Auen", "", 99,
     [
       ["Trinoma", "C3", "2026-11-16", "20:45"],
-      ["Gateway", "C17", "2026-11-21", "15:00"],
+      ["Gateway", "C17", "2026-11-22", "14:15"],
     ],
     "", ""
   ],
